@@ -1,0 +1,513 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+---
+title: "PAC 1"
+author: "Carlos A. García"
+date: "March 19, 2019"
+output: 
+  pdf_document: 
+    fig_caption: yes
+    keep_tex: yes
+header-includes: \usepackage{float}
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# 1. Carregueu l'arxiu de dades en R i feu una breu descripció del mateix, on s'indiqui el nombre de registres llegits, el nombre de variables i els noms de les variables. Recordeu que abans de carregar l'arxiu, cal inspeccionar quin tipus de format csv es tracta per tal que la seva lectura sigui apropiada.
+
+Càrrega de les dades. El separador de camps és una coma i el símbol decimal és un punt. Depenent de la carpeta:
+
+```{r satisfaccioLaboral}
+satisfaccioLaboral <- 
+  read.table("D:/Users/cagarcia/uoc/M2.954 - Estadística avançada/PAC1/rawData.csv",
+             header=TRUE, sep=",", na.strings="NA", dec=".", strip.white=TRUE, 
+             blank.lines.skip = TRUE)
+```
+Hi ha 12 variables i 1920 registres (valor obtingut amb la funció nrow). El resum abans de fer cap tractament de dades és:
+```{r summary satisfaccioLaboral}
+summary(satisfaccioLaboral)
+
+```
+El tipus s'ha obtingut amb la funció class (només carregant les dades, sense cap tractament).
+```{r class satisfaccioLaboral}
+sapply(satisfaccioLaboral, class)
+```
+\begin{table}[H]
+\centering
+\caption{Tipus de cada variable}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Variable} & \textbf{Tipus} \\ \hline
+city & factor \\ \hline
+sex & factor \\ \hline
+educ\_level & integer \\ \hline
+job\_type & integer \\ \hline
+happiness & factor \\ \hline
+age & integer \\ \hline
+seniority & integer \\ \hline
+sick\_leave & integer\\ \hline
+sick\_leave\_b & integer\\ \hline
+work\_hours & numeric\\ \hline
+Cho\_initial & numeric\\ \hline
+Cho\_final & numeric\\ \hline
+\end{tabular}
+\end{table}
+
+# 2. Indiqueu el tipus de variable estadística de cada variable.
+
+\begin{table}[H]
+\centering
+\caption{Tipus de variable estadística}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Variable} & \textbf{Tipus} \\ \hline
+city & categòrica nominal \\ \hline
+sex & categòrica nominal \\ \hline
+educ\_level & categòrica ordinal \\ \hline
+job\_type & categòrica ordinal \\ \hline
+happiness & quantitativa contínua \\ \hline
+age & quantitativa discreta \\ \hline
+seniority & quantitativa discreta \\ \hline
+sick\_leave & quantitativa discreta\\ \hline
+sick\_leave\_b & categòrica ordinal\\ \hline
+work\_hours & quantitativa contínua\\ \hline
+Cho\_initial & quantitativa contínua\\ \hline
+Cho\_final & quantitativa contínua\\ \hline
+\end{tabular}
+\end{table}
+
+\begin{enumerate}
+\item \textbf{City.} Ciutat de la persona treballadora. És nominal ja que conté informació alfanumèrica.
+\item	\textbf{Sex.} Sexe de la persona treballadora. És nominal ja que conté informació alfanumèrica.
+\item	\textbf{Educ\_level.} Nivell d'educació de la persona treballadora. Conté informació numèrica que amaga informació categòrica (les categories es classifiquen com a 1, 2, 3 o 4). 
+\item	\textbf{Job\_type.} Tipus de treball de la persona treballadora. Conté informació numèrica que amaga informació categòrica (les categories es classifiquen com a 1 o 2). L'enunciat fa servir les classificacions C: qualificat i PC: poc qualificat.
+\item	\textbf{Happiness.} Nivell de felicitat de la persona treballadora. Conté numeració contínua.
+\item	\textbf{Age.} Edat de la persona treballadora. Aquesta variable podria ser considerada com a quantitativa contínua (si pensem que podem expressar l'edat amb decimals). Jo considero que la naturalesa de la variable és discreta (es respon 41 anys, no 41.3 ).
+\item	\textbf{Seniority.} Anys d'experiència de la persona treballadora. Mateix cas que la variable Age.
+\item	\textbf{Sick\_leave.} Dies en que la persona treballadora ha estat malalta en el darrer any. La considero quantitativa discreta perquè els dies s'indiquen de forma sencera. El dia o es conta o no es conta.
+\item	\textbf{Sick\_leave\_b.} Variable binària que indica si la persona ha estat malalta. Evidentment, això és una categòrica ordinal.
+\item	\textbf{Work\_hours.} Hores setmanals de feina de promig de la persona. És quantitativa contínua.
+\item	\textbf{Cho\_initial.} Nivell de colesterol de la persona a la penúltima revisió mèdica. És quantitativa contínua.
+\item	\textbf{Cho\_final.} Nivell de colesterol de la persona a la darrera revisió mèdica. És quantitativa contínua.
+\end{enumerate}
+
+
+# 3.	En el cas que R no assigni el tipus apropiat a alguna variable, realitzeu la conversió necessària per tal que el tipus final de cada variable sigui l'apropiat. Per exemple, possibles errors de variables quantitatives amb confusió en el separador decimal.
+
+\begin{table}[H]
+\centering
+\caption{Tipus de variable estadística}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Variable} & \textbf{Tipus assignat} & \textbf{Tipus objectiu} \\ \hline
+city & factor & factor \\ \hline
+sex & factor & factor \\ \hline
+educ\_level & integer & ordered \\ \hline
+job\_type & integer & factor \\ \hline
+happiness & factor & numeric \\ \hline
+age & integer & integer \\ \hline
+seniority & integer & integer \\ \hline
+sick\_leave & integer & integer\\ \hline
+sick\_leave\_b & integer & logical\\ \hline
+work\_hours & numeric & numeric \\ \hline
+Cho\_initial & numeric & numeric \\ \hline
+Cho\_final & numeric & numeric \\ \hline
+\end{tabular}
+\end{table}
+
+##Nivell d'educació
+La transformació és molt senzilla. Transformem els valors actuals (1, 2, 3 i 4) en els codis indicats a l'enunciat. No tractem els valors buits perquè no n'hi ha. 
+```{r satisfaccioLaboral educlevel}
+satisfaccioLaboral$educ_level <- factor(satisfaccioLaboral$educ_level, 
+                                        levels=c(1,2,3,4), labels = c("N", "P", "S", "U"))
+table(satisfaccioLaboral$educ_level)
+```
+##Tipus de feina
+La transformació és molt senzilla. Transformem els valors actuals (1 i 2) en codis indicats a l'enunciat (C per a Qualificat i PC per a poc qualificat) . No tractem els valors buits perquè no n'hi ha.
+```{r satisfaccioLaboral tipus feina}
+satisfaccioLaboral$job_type <- factor(satisfaccioLaboral$job_type, levels=c(1,2), 
+                                        labels=c("C", "PC"))
+table (satisfaccioLaboral$job_type)
+```
+##Nivell de felicitat
+Les dades tenen números amb "," en lloc de "." com a separador de decimals. Substituïm els valors i convertim el tipus. Per ara, mantindrem els valors NA
+```{r satisfaccioLaboral nivell de felicitat}
+satisfaccioLaboral$happiness <- gsub(",", ".", satisfaccioLaboral$happiness);
+satisfaccioLaboral$happiness <- as.numeric(satisfaccioLaboral$happiness);
+summary(satisfaccioLaboral$happiness);
+```
+##Binari de malaltia
+Ara mateix el valor de la columna és 0 (false), 1 (true); convertim a booleà.
+```{r satisfaccioLaboral binari de malaltia}
+satisfaccioLaboral$sick_leave_b <- factor(satisfaccioLaboral$sick_leave_b, 
+                                          levels=c(0,1), labels=c(FALSE, TRUE));
+summary(satisfaccioLaboral$sick_leave_b);
+```
+##Hores de feina
+Podem veure que hi ha valors negatius en les hores de feina. Evidentment, això no és possible. No es poden fer un número negatiu de hores.
+Els valors semblen molt raonables, amb el signe equivocat. 
+
+```{r satisfaccioLaboral hores de feina}
+satisfaccioLaboral$work_hours[satisfaccioLaboral$work_hours <= 0]
+```
+Podem pensar que es un error d'introducció de dades i que el signe és erroni. Canviem el signe multiplicant per -1.
+```{r satisfaccioLaboral convertir hores de feina}
+satisfaccioLaboral$work_hours <- -1 * 
+  satisfaccioLaboral$work_hours[satisfaccioLaboral$work_hours <= 0]
+```
+##Resum de les variables
+Convertim les variables que encara no estan en el tipus correcte.
+```{r satisfaccioLaboral resum variables}
+satisfaccioLaboral$sick_leave_b <- as.logical(satisfaccioLaboral$sick_leave_b)
+satisfaccioLaboral$educ_level <- as.ordered(satisfaccioLaboral$educ_level)
+```
+Podem veure que ja tenim els tipus de dades objectiu
+```{r satisfaccioLaboral resum variables class}
+sapply(satisfaccioLaboral, class)
+```
+# 4. Normalitzeu / Estandaritzeu les variables quantitatives.
+##Nivell de felicitat
+El problema que tenim és que hi ha valors NA a la variable. Tenim 12 casos. Tenim vàries estratègies possibles:
+\begin{enumerate}
+\item Descartar les mostres
+\item 	Assignar un valor en funció d'una variable correlacionada
+\item 	Assignar un valor en funció de la distància de les altres mostres
+\item 	Assignar el valor de la mitja de les mostres
+\end{enumerate}
+El rati de valors és molt petit (només 12), així que podem assumir que assignar la mitja és correcte i no afectarà gaire a la mostra. Una vegada fet això, normalitzem la variable: 
+$$z_i = \frac{x_i - \overline{x}}{S}$$
+```{r satisfaccioLaboral normalizar hapiness}
+satisfaccioLaboral$happiness[is.na(satisfaccioLaboral$happiness)] <- 
+  mean(satisfaccioLaboral$happiness[!is.na(satisfaccioLaboral$happiness)])
+satisfaccioLaboral$happinessNorm <- (satisfaccioLaboral$happiness - 
+  mean(satisfaccioLaboral$happiness)) / sd(satisfaccioLaboral$happiness)
+summary(satisfaccioLaboral$happinessNorm)
+sd(satisfaccioLaboral$happinessNorm)
+```
+Com a resultat tenim una variable amb mitjana 0 i desviació típica 1.
+
+## Altres variables
+
+Primer estandarizem les working hours a un decimal 
+```{r satisfaccioLaboral normalizar work hours1 decimal}
+satisfaccioLaboral$work_hours <- round(satisfaccioLaboral$work_hours, digits = 1)
+```
+Nomalitzem les altres variables de la mateixa forma, que no tenen valors NA.
+```{r satisfaccioLaboral normalizar altres variables}
+satisfaccioLaboral$ageNorm <- 
+  (satisfaccioLaboral$age - mean(satisfaccioLaboral$age)) / 
+  sd(satisfaccioLaboral$age);
+satisfaccioLaboral$seniorityNorm <- 
+  (satisfaccioLaboral$seniority - 
+     mean(satisfaccioLaboral$seniority)) / 
+  sd(satisfaccioLaboral$seniority);
+satisfaccioLaboral$sick_leaveNorm <- 
+  (satisfaccioLaboral$sick_leave - mean(satisfaccioLaboral$sick_leave)) / 
+  sd(satisfaccioLaboral$sick_leave);
+satisfaccioLaboral$work_hoursNorm <- 
+  (satisfaccioLaboral$work_hours - mean(satisfaccioLaboral$work_hours)) / 
+  sd(satisfaccioLaboral$work_hours);
+satisfaccioLaboral$Cho_initialNorm <- 
+  (satisfaccioLaboral$Cho_initial - mean(satisfaccioLaboral$Cho_initial)) / 
+  sd(satisfaccioLaboral$Cho_initial);
+satisfaccioLaboral$Cho_finalNorm <- 
+  (satisfaccioLaboral$Cho_final - mean(satisfaccioLaboral$Cho_final)) / 
+  sd(satisfaccioLaboral$Cho_final);
+```
+S'han creat columnes noves amb els valors normalitzats per tal de no perdre la informació original. Crec que és millor crear columnes noves per tal de fer l'anàlisi i no deixar de tenir les columnes originals.
+
+#5.	Normalitzeu / Estandaritzeu les variables qualitatives.
+##Ciutat
+Per a normalitzar, primer llevem els espais en blanc. Després passem totes les paraules a TitleCase (primera lletra en majúscula i les altres en minúscula). Finalment convertim les preposicions a minúscules (en el nostre exemple, només tenim el "de").
+```{r satisfaccioLaboral normalizar ciutat}
+satisfaccioLaboral$city <- trimws(satisfaccioLaboral$city, "both");
+satisfaccioLaboral$city <- tools::toTitleCase(satisfaccioLaboral$city);
+satisfaccioLaboral$city <- stringr::str_replace(satisfaccioLaboral$city, 'De', 'de');
+table(satisfaccioLaboral$city);
+```
+##Sexe
+Tenim la variable en majúscules i minúscules. La transformem en majúscules, a més de llevar-li els espais en banc.
+```{r satisfaccioLaboral normalizar sexe}
+satisfaccioLaboral$sex <- toupper(trimws(satisfaccioLaboral$sex, "both")); 
+table(satisfaccioLaboral$sex);
+```
+#6.	Reviseu possibles inconsistències entre variables: age versus seniority i número d'hores setmanals promig amb valor negatiu.
+Les hores promig ja han estat modificades al punt 3 per a poder obtenir valors correctes a la normalització. Recordem que hem multiplicat per -1 els valors negatius.
+```{r satisfaccioLaboral normalizar working hours}
+summary(satisfaccioLaboral$work_hours)
+```
+Per a trobar incoherències entre les variables age i seniority, primer crearem una variable amb l'edat en que la persona va començar a fer feina (age - seniority).
+```{r satisfaccioLaboral normalizar age i seniority}
+satisfaccioLaboral$startAge <- satisfaccioLaboral$age - satisfaccioLaboral$seniority
+```
+I mirem quants tenien menys de 18 anys quan varen començar a treballar (en principi són dades inconsistents); en tenim 543.
+```{r satisfaccioLaboral normalizar càlcul startAge}
+nrow(subset(satisfaccioLaboral, startAge < 18,))
+```
+Assignem els valors a seniority tal que si li restem a l'edat mai sigui inferior a 18.
+```{r satisfaccioLaboral normalizar seniority}
+satisfaccioLaboral$seniority[satisfaccioLaboral$startAge < 18] <- 
+  satisfaccioLaboral$seniority[satisfaccioLaboral$startAge < 18] -  
+  (18 - satisfaccioLaboral$startAge[satisfaccioLaboral$startAge < 18])
+```
+
+Tornem a calcular la variable startAge com age - seniority i validem que ja no hi ha cap valor inconsistent:
+
+```{r satisfaccioLaboral recalcul seniority}
+satisfaccioLaboral$startAge <- satisfaccioLaboral$age - satisfaccioLaboral$seniority
+summary(satisfaccioLaboral$startAge)
+```
+El resum de seniority és:
+```{r satisfaccioLaboral resum seniority}
+summary(satisfaccioLaboral$startAge)
+```
+Recalculem la variable normalitzada de seniority:
+```{r satisfaccioLaboral recalcul seniority norm}
+satisfaccioLaboral$seniorityNorm <- 
+  (satisfaccioLaboral$seniority - mean(satisfaccioLaboral$seniority)) / 
+  sd(satisfaccioLaboral$seniority)
+summary(satisfaccioLaboral$seniorityNorm)
+```
+
+# 7. Busqueu valors atípics en les variables quantitatives.
+## i. Presenteu un boxplot per cada variable quantitativa.
+
+## Edat
+```{r satisfaccioLaboral boxplot edat}
+boxplot(satisfaccioLaboral$age,main="Age box plot", col="gray")
+```
+No hi ha valors outliers:
+
+```{r satisfaccioLaboral atipics edat}
+boxplot.stats(satisfaccioLaboral$age)$out
+```
+Ens assegurem calculant el rang d'edat en base al rang interquantil: 
+```{r satisfaccioLaboral qaunrils edat}
+quantile(satisfaccioLaboral$age, 0.25) - 
+  (IQR(satisfaccioLaboral$age) * 1.5)
+quantile(satisfaccioLaboral$age, 0.75) + 
+  (IQR(satisfaccioLaboral$age) * 1.5)
+```
+Efectivament, no hi ha ningú amb menys de 12 anys ni amb més de 68.
+
+## Anys d'experiència
+
+```{r satisfaccioLaboral boxplot seniority}
+boxplot(satisfaccioLaboral$seniority,main="Seniority box plot", col="gray")
+boxplot.stats(satisfaccioLaboral$seniority)$out
+```
+Aquí sí hi ha valors outliers, els que tenen 0 o 1 any d'experiència
+
+## Nivell de felicitat
+
+```{r satisfaccioLaboral boxplot happiness}
+boxplot(satisfaccioLaboral$happiness,main="Happiness box plot", col="gray")
+boxplot.stats(satisfaccioLaboral$happiness)$out
+```
+Aquí tenim valors outliers tant per abaix com per adalt.
+
+##Dies de baixa
+
+Aquí tenim molt de valors outliers; la gran majoria de valors són 0. Això provoca que tant el primer quantil com el tercer siguin 0. Això fa que qualsevol valor diferent de 0 sigui outlier.
+```{r satisfaccioLaboral boxplot sick leave}
+boxplot(satisfaccioLaboral$sick_leave,main="Sick leave box plot", col="gray")
+boxplot.stats(satisfaccioLaboral$sick_leave)$out
+```
+
+##Hores de feina
+
+```{r satisfaccioLaboral boxplot work hours}
+boxplot(satisfaccioLaboral$work_hours,main="Work hours box plot", col="gray")
+boxplot.stats(satisfaccioLaboral$work_hours)$out
+```
+Tenim 40 valors fora dels límits (tots per abaix)
+
+
+```{r, results='asis'}
+knitr::kable(head(satisfaccioLaboral), format = "latex")
+```
+Els resultats són els mateixos si treballem amb la variable normalitzada
+
+##Colesterol penúltima medició
+
+```{r satisfaccioLaboral boxplot cho_initial}
+boxplot(satisfaccioLaboral$Cho_initial,main="Cho initial box plot", col="gray")
+boxplot.stats(satisfaccioLaboral$Cho_initial)$out
+```
+Aquí també tenim valors outliers tant per adalt com per abaix
+
+
+##Colesterol última medició
+
+Aquí no tenim valors outliers, perquè el rang interquantílic és més ampli. És a dir: els valors són més lluny de la mitja. Això fa que valors que amb la gràfica anterior s'haguessin considerat outliers, aquí són "normals".
+
+```{r satisfaccioLaboral boxplot cho_final}
+boxplot(satisfaccioLaboral$Cho_final,main="Cho final box plot", col="gray")
+boxplot.stats(satisfaccioLaboral$Cho_final)$out
+```
+##Realizeu un quadre amb les estimacions robustes i no robustes de tendència central i dispersió per a cada variable quantitativa
+
+```{r, echo=FALSE}
+titleOfRows <- c(
+  "Mitjana aritmètica",	
+  "Mediana",	
+  "Mitjana retallada (al 5%)",
+  "Mitjana winsoritzada (al 5%)",	
+  "Rang Interquartílic",	
+  "Desviació estàndard",	
+  "DAM"  
+)
+happinessValues <- c(
+  mean(satisfaccioLaboral$happiness), 
+  median(satisfaccioLaboral$happiness),
+  mean(satisfaccioLaboral$happiness, trim=0.05),
+  psych::winsor.mean(satisfaccioLaboral$happiness, trim=0.05),
+  IQR(satisfaccioLaboral$happiness),
+  sd(satisfaccioLaboral$happiness),
+  mad(satisfaccioLaboral$happiness)
+)
+ageValues <- c(
+  mean(satisfaccioLaboral$age), 
+  median(satisfaccioLaboral$age),
+  mean(satisfaccioLaboral$age, trim=0.05),
+  psych::winsor.mean(satisfaccioLaboral$age, trim=0.05),
+  IQR(satisfaccioLaboral$age),
+  sd(satisfaccioLaboral$age),
+  mad(satisfaccioLaboral$age)
+)
+seniorityValues <- c(
+  mean(satisfaccioLaboral$seniority), 
+  median(satisfaccioLaboral$seniority),
+  mean(satisfaccioLaboral$seniority, trim=0.05),
+  psych::winsor.mean(satisfaccioLaboral$seniority, trim=0.05),
+  IQR(satisfaccioLaboral$seniority),
+  sd(satisfaccioLaboral$seniority),
+  mad(satisfaccioLaboral$seniority)
+)
+sick_leaveValues <- c(
+  mean(satisfaccioLaboral$sick_leave), 
+  median(satisfaccioLaboral$sick_leave),
+  mean(satisfaccioLaboral$sick_leave, trim=0.05),
+  psych::winsor.mean(satisfaccioLaboral$sick_leave, trim=0.05),
+  IQR(satisfaccioLaboral$sick_leave),
+  sd(satisfaccioLaboral$sick_leave),
+  mad(satisfaccioLaboral$sick_leave)
+)
+workHoursValues <- c(
+  mean(satisfaccioLaboral$work_hours), 
+  median(satisfaccioLaboral$work_hours),
+  mean(satisfaccioLaboral$work_hours, trim=0.05),
+  psych::winsor.mean(satisfaccioLaboral$work_hours, trim=0.05),
+  IQR(satisfaccioLaboral$work_hours),
+  sd(satisfaccioLaboral$work_hours),
+  mad(satisfaccioLaboral$work_hours)
+)
+choIniValues <- c(
+  mean(satisfaccioLaboral$Cho_initial), 
+  median(satisfaccioLaboral$Cho_initial),
+  mean(satisfaccioLaboral$Cho_initial, trim=0.05),
+  psych::winsor.mean(satisfaccioLaboral$Cho_initial, trim=0.05),
+  IQR(satisfaccioLaboral$Cho_initial),
+  sd(satisfaccioLaboral$Cho_initial),
+  mad(satisfaccioLaboral$Cho_initial)
+)
+choFinValues <- c(
+  mean(satisfaccioLaboral$Cho_final), 
+  median(satisfaccioLaboral$Cho_final),
+  mean(satisfaccioLaboral$Cho_final, trim=0.05),
+  psych::winsor.mean(satisfaccioLaboral$Cho_final, trim=0.05),
+  IQR(satisfaccioLaboral$Cho_final),
+  sd(satisfaccioLaboral$Cho_final),
+  mad(satisfaccioLaboral$Cho_final)
+)
+
+satisfaccioLaboralRes <- data.frame(variables=titleOfRows, happiness=happinessValues, 
+                                    age=ageValues, seniority=seniorityValues, 
+                                    sick_leave=sick_leaveValues,
+                                    work_hours=workHoursValues, cho_ini=choIniValues, 
+                                    cho_fin=choFinValues)
+
+```
+
+```{r, echo=FALSE}
+knitr::kable(satisfaccioLaboralRes, format = "latex")
+```
+Els resultats són els mateixos si treballem amb la variable normalitzada
+
+# 8. Valors perduts
+## i.Busqueu quines variables i quins registres tenen valors perduts.
+L'única variable amb valors perduts és happiness (12 NA).  Com abans he assignat el valor de la mitja per a fer l'anàlisi, torn enrere el canvi:
+
+```{r satisfaccioLaboral regenerem happiness}
+satisfaccioLaboralAux <- 
+  read.table("D:/Users/cagarcia/uoc/M2.954 - Estadística avançada/PAC1/rawData.csv",
+             header=TRUE, sep=",", na.strings="NA", dec=".", strip.white=TRUE, 
+             blank.lines.skip = TRUE)
+satisfaccioLaboral$happiness <- satisfaccioLaboralAux$happiness
+satisfaccioLaboral$happiness <- gsub(",", ".", satisfaccioLaboral$happiness);
+satisfaccioLaboral$happiness <- as.numeric(satisfaccioLaboral$happiness);
+head(satisfaccioLaboral$happiness)
+```
+Els registres NA són:
+```{r satisfaccioLaboral registres happiness NA, echo=FALSE}
+satisfaccioLaboralAux <- subset(satisfaccioLaboral, is.na(happiness), select = c("city", "sex", "age", "seniority"))
+knitr::kable(satisfaccioLaboralAux, format = "latex")
+```
+## ii. Imputeu els valors a partir dels k-veïns més propers usant la distància de Gower amb la informació de totes les variables.
+Prendrem com a nombre K = 5, que és el valor per defecte. Considerem totes les variables, no s'exclou cap columna. Per veure el resultat, guardem els valors a la variable happinessComplete. Així podrem comprovar els valors assignats:
+```{r satisfaccioLaboral regenerem happiness knn}
+satisfaccioLaboral.complet <- VIM::kNN(satisfaccioLaboral);
+satisfaccioLaboral$happinessComplete <- satisfaccioLaboral.complet$happiness;
+```
+Comprovem els valors assignats:
+```{r satisfaccioLaboral show happiness knn}
+satisfaccioLaboral$happinessComplete[is.na(satisfaccioLaboral$happiness)]
+```
+Ara que sabem que està bé, li assignem a la variable:
+```{r satisfaccioLaboral set happiness knn}
+satisfaccioLaboral$happiness <- satisfaccioLaboral$happinessComplete
+```
+Si tornem a calcular els estimadors de la variable:
+```{r satisfaccioLaboral paint happiness knn, echo=FALSE}
+happinessValuesNew <- c(
+  mean(satisfaccioLaboral$happiness), 
+  median(satisfaccioLaboral$happiness),
+  mean(satisfaccioLaboral$happiness, trim=0.05),
+  psych::winsor.mean(satisfaccioLaboral$happiness, trim=0.05),
+  IQR(satisfaccioLaboral$happiness),
+  sd(satisfaccioLaboral$happiness),
+  mad(satisfaccioLaboral$happiness)
+)
+satisfaccioLaboralRes <- data.frame(variables=titleOfRows, happiness_old=happinessValues, 
+                                    happiness_new=happinessValuesNew)
+
+
+knitr::kable(satisfaccioLaboralRes, format = "latex")
+```
+
+#9. Realitzeu un breu estudi descriptiu de les dades un cop depurades.
+Mostrem el summary de totes les variables una vegada depurades. De les que no es veuen les dades, mostrem la distribució mitjançant l'operació table.
+```{r satisfaccioLaboral mostrar variables}
+sapply(satisfaccioLaboral[c("happiness", "educ_level",
+                            "job_type", "age", "seniority", "sick_leave",
+                            "sick_leave_b", "work_hours", "Cho_initial",
+                            "Cho_final")], summary)
+table(satisfaccioLaboral$city)
+table(satisfaccioLaboral$sex)
+```
+
+
+#10. Finalment, emmagatzemeu les dades en un arxiu de dades corregit.
+Desem els resultats al fitxer rawDataNet.csv
+```{r satisfaccioLaboral desem el fitxer}
+write.table(satisfaccioLaboral[c("city", "sex", "happiness", "educ_level",
+  "job_type", "age", "seniority", "sick_leave",
+  "sick_leave_b", "work_hours", "Cho_initial",
+  "Cho_final")], 
+  file = "D:/Users/cagarcia/uoc/M2.954 - Estadística avançada/PAC1/rawDataNet.csv",
+  append = FALSE, sep = ";", row.names = FALSE)
+```
