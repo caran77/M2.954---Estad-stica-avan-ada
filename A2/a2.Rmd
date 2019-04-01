@@ -1,0 +1,237 @@
+---
+title: "A2"
+author: "Carlos A. García"
+date: "March 30, 2019"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#Càrrega del fitxer
+
+##Carregueu l'arxiu de dades en R. Independentment del fitxer que vàreu obtenir en l'activitat 1, useu el fitxer "rawData_clean.csv". Un cop carregat el fitxer, valideu que els tipus de dades són els correctes. Si no és així, feu les conversions de tipus oportunes.
+
+Primer establim el directori de feina
+```{r directori de feina}
+setwd("D:/Users/cagarcia/uoc/M2.954 - Estadística avançada/A2")
+```
+
+Llegim el fitxer proporcionat a la pràctica
+
+```{r llegir el document}
+satisfaccioLaboral <- read.csv2("rawData_clean.csv", header = TRUE, sep = ",", dec = ".")
+attach(satisfaccioLaboral)
+
+summary(satisfaccioLaboral)
+```
+Validem que els tipus de dades (classes) són correctes
+```{r validem les classes}
+sapply(satisfaccioLaboral, class)
+```
+
+##Gràfic de totes les variables:
+```{r gràfic de les variables}
+plot(city, main="Distribució de persones per ciutat", xlab="ciutat", 
+     ylab="Número de persones", col="#ADD8E6", lwd = 2)
+
+sexDesc <- factor(sex, levels=c("M","F"), labels=c("Home","Dona"))
+plot(sexDesc, main="Distribució de persones per sexe", xlab="sexe", 
+     ylab="número de persones", col="#ADD8E6", lwd = 2)
+
+educDesc <- factor(educ_level, levels=c("N","P","S","U"), labels=c("Sense estudis","Primària", "Secundària", "Universitat"))
+plot(educDesc, main="Distribució de persones per nivell d'educació", 
+     xlab="Nivell educatiu", ylab="Número de persones", col="#ADD8E6", lwd = 2)
+
+jobTypeDesc <- factor(job_type, levels=c("C","PC"), labels=c("Qualificat", "Poc qualificat"))
+plot(jobTypeDesc, main="Distribució de persones per qualificació professional", 
+     xlab="Qualificació professional", ylab="Número de persones", col="#ADD8E6", lwd = 2)
+
+hist(happiness, breaks=c(0:10), main="Distribució de persones per nivell de felicitat", 
+     xlab="Nivell de felicitat (0-10). En vermell els quantils", ylab="Número de persones", col="#ADD8E6")
+abline(v=quantile(happiness), col="red", lwd=3)
+
+den.happiness <- density(happiness)
+plot(den.happiness, col="black", main="Densitat de persones per nivell de felicitat",
+     xlab="Nivell de felicitat", ylab="Persones")
+
+hist(age, breaks=c(min(age):max(age)), main="Distribució de persones per edat", 
+     xlab="Edat de les persones de la mostra. En vermell els quantils", ylab="Número de persones", col="#ADD8E6")
+abline(v=quantile(age), col="red", lwd=3)
+
+hist(seniority, breaks=c(min(seniority):max(seniority)), main="Distribució de persones per anys d'experiència", 
+     xlab="Experiència de les persones de la mostra. En vermell els quantils", ylab="Número de persones", col="#ADD8E6")
+abline(v=quantile(seniority), col="red", lwd=3)
+
+max_work_hours <- max(work_hours)+1
+hist(work_hours, breaks=c(min(work_hours):max_work_hours), main="Distribució de persones per hores de feina setmanals", 
+     xlab="Hores setmanals. En vermell els quantils", ylab="Número de persones", col="#ADD8E6")
+abline(v=quantile(work_hours), col="red", lwd=3)
+
+par(mfrow=c(1,2))
+max_sick_leave <- max(sick_leave) + 5
+hist(sick_leave[sick_leave>0], breaks=seq(from=0, to=max_sick_leave, by=5), main="Persones per dies d'absència", 
+     xlab="Dies d'absència
+     (al menys 1)", ylab="Número de persones", col="#ADD8E6")
+abline(v=quantile(sick_leave[sick_leave>0]), col="red", lwd=3)
+sick_leave_bDesc <- factor(sick_leave_b, levels=c("0","1"), labels=c("No baixes", "Baixes"))
+plot(sick_leave_bDesc, main="", 
+     xlab="Indicador de baixa", ylab="Número de persones", col="#ADD8E6", lwd = 2)
+
+
+hist(Cho_initial, main="Nivell de colesterol inicial", 
+     xlab="Nivell de colesterol
+     (en vermell els quantils)", ylab="Número de persones", col="#ADD8E6")
+abline(v=quantile(Cho_initial), col="red", lwd=3)
+hist(Cho_final, main="Nivell de colesterol final", 
+     xlab="Nivell de colesterol
+     (en vermell els quantils)", ylab="Número de persones", col="#ADD8E6")
+abline(v=quantile(Cho_final), col="red", lwd=3)
+dev.off()
+
+```
+#Satisfacció en el treball en relació al sexe
+##Boxplot
+Càlcul de happiness en funció del sexe
+Primer desglosem l'informació en funció del sexe
+```{r dataframe depenent del sexe}
+satisfaccioLaboral.dones <- satisfaccioLaboral[sex=="F",]
+satisfaccioLaboral.homes <- satisfaccioLaboral[sex=="M",]
+boxplot(satisfaccioLaboral.dones$happiness, main="Satisfacció laboral (dones)", 
+   xlab="", ylab="Nivell de satisfacció", col="#ADD8E6")
+boxplot.stats(satisfaccioLaboral.dones$happiness)$out
+summary(satisfaccioLaboral.dones$happiness)
+sd(satisfaccioLaboral.dones$happiness)
+boxplot(satisfaccioLaboral.homes$happiness, main="Satisfacció laboral (homes)", 
+   xlab="", ylab="Nivell de satisfacció", col="#ADD8E6")
+boxplot.stats(satisfaccioLaboral.homes$happiness)$out
+summary(satisfaccioLaboral.homes$happiness)
+sd(satisfaccioLaboral.homes$happiness)
+```
+A nivell visual no hi ha una gran diferència per sexe. Els interquantils són pràcticament els mateixos. Sí que tenim més valors outliers per adalt en el cas d'homes (3 vs 1) i més per abaix en cas de dones (2 vs 1). 
+
+Calculem els tres intervals (happiness de la mostra total, happiness de les dones i happiness dels homes):
+
+```{r interval de confiança del 90}
+margError <- qt(0.05, df=(nrow(satisfaccioLaboral)-1), 
+                lower.tail=FALSE)*sd(happiness)/sqrt(nrow(satisfaccioLaboral)) 
+intEsq <- mean(happiness)-margError
+intDer <- mean(happiness)+margError
+print(c(intEsq, intDer))
+
+margError <- qt(0.05, df=(nrow(satisfaccioLaboral)-1), lower.tail=FALSE)*
+                sd(satisfaccioLaboral.dones$happiness)/sqrt(nrow(satisfaccioLaboral)) 
+intEsq <- mean(satisfaccioLaboral.dones$happiness)-margError
+intDer <- mean(satisfaccioLaboral.dones$happiness)+margError
+print(c(intEsq, intDer))
+
+margError <- qt(0.05, df=(nrow(satisfaccioLaboral)-1), lower.tail=FALSE)*
+                sd(satisfaccioLaboral.homes$happiness)/sqrt(nrow(satisfaccioLaboral)) 
+intEsq <- mean(satisfaccioLaboral.homes$happiness)-margError
+intDer <- mean(satisfaccioLaboral.homes$happiness)+margError
+print(c(intEsq, intDer))
+```
+L'interval de confiança ens dóna un 90% de probabilitats de que la mitjana poblacional es trobi en el rang indicat.
+
+##Escriure la hipòtesi nul·la i alternativa
+
+Si mirem les dades anteriors, podem apreciar que els valors estadístics descriptius són molt similars: la mitja i la mediana són pràcticament idèntiques. La major diferència la trobem a la variança.
+
+Analitzarem dues possibles hipòtesis nul·les (i en conseqüència dues alternatives) per intentar veure si el nivell de happiness és diferent en homes que en dones:
+
+\begin{enumerate}
+\item Hipòtesi nul·la: Les mitjanes són diferents. Alternativa: són iguals i, per tant, indistinguibles.
+\item	Hipòtesi nul·la: Les variances són diferents. Alternativa: són iguals i, per tant, indistinguibles.
+\end{enumerate}
+
+##Mètode
+En el nostre cas, no coneixem ni la mitjana ni la variança poblacional. Només coneixem la mitjana i la variança de la mostra.
+El nostre objectiu és clar: intentar veure si el nivell de felicitat (happiness) depèn del sexe de la persona. Això ho podrem comprovar comparant les mitjanes i variances mostrals.
+En aquest cas, per a contrastar les mitjanes, un mètode adequat és el t de Student. El mateix és aplicable al contrast de variances.
+
+##Calcular l'estadístic de contrast, el valor crític i el valor p
+Per lo que podem veure, hem de rebutjar ambdues hipòtesis nules. El rang de la mitjana inclou el valor 0 i el de la variança l'1. 
+```{r Hipotesi nul·la vs alternativa de la mitjana}
+var.test(happiness ~ sex, alternative='two.sided', conf.level=.95, var.equal=FALSE, 
+  data=satisfaccioLaboral)
+```
+```{r Hipotesi nul·la vs alternativa de la variança}
+t.test(happiness~sex, alternative='two.sided', conf.level=.95, var.equal=FALSE, 
+       data=satisfaccioLaboral)
+```
+Com es pot veure adalt, els respectius valors de p són  p-value = 0.8536 i  p-value = 0.9851.
+
+Si considerem ambdues distribucions per separat (dones i homes), podem calcular els valors crítics de la mitja amb la distribució Khi-quadrat i calcular l'interval de confiança:
+
+```{r Khi qaudrat de les mitjes}
+qchisq(c(0.975,0.025), df=nrow(satisfaccioLaboral), lower.tail=TRUE)
+((nrow(satisfaccioLaboral) - 1)*mean(satisfaccioLaboral.dones$happiness)) /  
+  qchisq(c(0.975,0.025), df=nrow(satisfaccioLaboral), lower.tail=TRUE)
+((nrow(satisfaccioLaboral) - 1)*mean(satisfaccioLaboral.homes$happiness)) /  
+  qchisq(c(0.975,0.025), df=nrow(satisfaccioLaboral), lower.tail=TRUE)
+
+```
+
+##Interpretar el resultat
+Segons la mostra de dades, podem afirmar que no hi ha diferència de happiness depenen del sexe de la persona. Les mostres són molt similars i els indicadors no ens permeten afirmar que hi ha cap diferèncie entre ambdues mostres (dones i homes).
+
+#Test no paramètric
+
+##Hipòtesi nul·la i alternativa
+Primer mirem si realment hi ha diferències entre els boxplot de les dues mostres (C i PC)
+
+```{r Anàlisi seniority depenent de job_type}
+satisfaccioLaboral.seniorityC <- satisfaccioLaboral[job_type=="C",]
+satisfaccioLaboral.seniorityPC <- satisfaccioLaboral[job_type=="PC",]
+boxplot(satisfaccioLaboral.seniorityC$seniority, main="Seniority (nivell C)", 
+   xlab="", ylab="Seniority (anys)", col="#ADD8E6")
+boxplot.stats(satisfaccioLaboral.seniorityC$seniority)$out
+boxplot(satisfaccioLaboral.seniorityPC$seniority, main="Seniority (nivell PC)", 
+   xlab="", ylab="Seniority (anys)", col="#ADD8E6")
+boxplot.stats(satisfaccioLaboral.seniorityPC$seniority)$out
+```
+\begin{enumerate}
+\item Hipòtesi nul·la: Les mitjanes són diferents. Alternativa: són iguals i, per tant, indistinguibles.
+\end{enumerate}
+
+```{r Wilcox análisi del job_type}
+wilcox.test(satisfaccioLaboral.seniorityC$seniority,satisfaccioLaboral.seniorityPC$seniority, correct=FALSE)
+```
+Amb un número tan proper a 0 com p-value = 4.141e-05 podem afirmar que la hipòtesi nul·la és correcta. 
+
+##Assumpció de normalitat
+Tests de normalitat de les variables numèriques
+```{r qplot of numeric}
+par(mfrow=c(2,2))
+qqplot(seniority, rnorm(nrow(satisfaccioLaboral)), main="Seniority", ylab = NULL)
+qqplot(age, rnorm(nrow(satisfaccioLaboral)), main="Age", ylab = NULL)
+qqplot(sick_leave, rnorm(nrow(satisfaccioLaboral)), main="Sick leave", ylab = NULL)
+qqplot(work_hours, rnorm(nrow(satisfaccioLaboral)), main="Work hours", ylab = NULL)
+```
+
+```{r qplot of numeric_cho}
+par(mfrow=c(1,2))
+qqplot(Cho_initial, rnorm(nrow(satisfaccioLaboral)), main="Cho initial", ylab = NULL)
+qqplot(Cho_final, rnorm(nrow(satisfaccioLaboral)), main="Cho  final", ylab = NULL)
+```
+
+```{r qplot of happiness}
+qqplot(happiness, rnorm(nrow(satisfaccioLaboral)), main="Happiness", ylab = NULL)
+```
+Com es pot veure visualment, la variable que més segueix la distribució normal és Happiness. Recordem que:
+\begin{enumerate}
+\item Si la línia és recta, llavors la variable segueix totalment la distribució normal
+\item Si la línia fa curva, llavors les dades poden estar esbiaixades (podem veure, per exemple, una lleu corva a la variable seniority)
+\item  Si hi ha valors que no segueixen la línia, llavors aquests no segueixen la distribució normal. És el cas de seniority, age, sick leave, inici i final de happiness, ...
+\end{enumerate}
+Ho podem validar executant el test de Shapiro-Wilk per a totes les variables. Si el valor és proper a 1, llavors s'accepta l'hipòtesi de que la variable segueix una distribució normal. Com es pot veure a continuació, happiness o age segueixen molt fortament la distribució normal.
+```{r tests de Shapiro-Wilk}
+shapiro.test(seniority)
+shapiro.test(age)
+shapiro.test(sick_leave)
+shapiro.test(work_hours)
+shapiro.test(Cho_initial)
+shapiro.test(Cho_final)
+shapiro.test(happiness)
+```
