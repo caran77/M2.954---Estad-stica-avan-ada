@@ -195,11 +195,6 @@ boxplot.stats(satisfaccioLaboral.seniorityPC$seniority)$out
 \item Hipòtesi nul·la: Les mitjanes són diferents. Alternativa: són iguals i, per tant, indistinguibles.
 \end{enumerate}
 
-```{r Wilcox análisi del job_type}
-wilcox.test(satisfaccioLaboral.seniorityC$seniority,satisfaccioLaboral.seniorityPC$seniority, correct=FALSE)
-```
-Amb un número tan proper a 0 com p-value = 4.141e-05 podem afirmar que la hipòtesi nul·la és correcta. 
-
 ##Assumpció de normalitat
 Tests de normalitat de les variables numèriques
 ```{r qplot of numeric}
@@ -235,3 +230,130 @@ shapiro.test(Cho_initial)
 shapiro.test(Cho_final)
 shapiro.test(happiness)
 ```
+
+##Test U de Mann-Whitney
+
+Hipòtesi alternativa (Ha): Els valors de seniority depenen del tipus de treball (qualificat o no qualificat).
+Hipòtesi nul·la (Ho): Els valors de seniority no depenen del tipus de treball.
+Nivell de significació. Per a tot valor de probabilitat igual o menor que 0.05, s'accepta Ha y se rebutja Ho.
+
+$\alpha = 0.05$
+```{r Wilcox análisi del job_type}
+wilcox.test(satisfaccioLaboral.seniorityC$seniority,
+            satisfaccioLaboral.seniorityPC$seniority, correct=FALSE)
+```
+Podem afirmar que la hipòtesi alternativa és correcta; hi ha relació entre el job type i el seniority, ja que el resultat és inferior a $\alpha$. 
+
+## Càlculs manuals
+  
+Recordem que per a una mostra suficientment gran, la mostra produïda pel test es distribueix de forma normal, on:
+
+$$Z = \frac{U - \overline{U}}{\sigma_u}$$
+On:
+$$U_1 = n_1n_2 + \frac{n_1(n_1 + 1)}{2}-\sum{R_1}$$
+$$U_2 = n_1n_2 + \frac{n_2(n_2 + 1)}{2}-\sum{R_2}$$
+```{r calculem els valors R1 i R2}
+n_1 <- nrow(satisfaccioLaboral.seniorityC)
+n_2 <- nrow(satisfaccioLaboral.seniorityPC)
+satisfaccioLaboral$seniority.rank <- rank(satisfaccioLaboral$seniority, na.last = TRUE, 
+                                          ties.method = "average")
+R_1 <- sum(satisfaccioLaboral$seniority.rank[satisfaccioLaboral$job_type == 'PC'])
+R_2 <- sum(satisfaccioLaboral$seniority.rank[satisfaccioLaboral$job_type == 'C'])
+R_1
+R_2
+```
+Calculem els Valors de $U_1$ i $U_2$:
+```{r calculem els valors U1 i U2}
+U_1 <- n_1 * n_2 + (n_1 * (n_1 + 1)/2) - R_1
+U_2 <- n_1 * n_2 + (n_2 * (n_2 + 1)/2) - R_2
+U_1
+U_2
+```
+La fórmula simplificada de $\sigma_u$ és:
+$$\sigma_u = \sqrt{\frac{n_1n_2(n_1 + n_2 + 1)}{12}}$$
+```{r calculem sigma}
+sigma_u <-sqrt((n_1*n_2*(n_1+n_2+1))/12)
+sigma_u
+```
+Calculem $\overline{U}$ com:
+$$\overline{U} = \frac{n_1 n_2}{2}$$
+```{r calculem mitja de u}
+Mitja_U <-(n_1*n_2)/2
+Mitja_U
+```
+I finalment calculem la distribució (com es pot veure, el valor absolut de z és el mateix tant si feim servir $U_1$ com $U_2$):
+$$Z = \frac{U - \overline{U}}{\sigma_u}$$
+```{r calcul de Z}
+z <- (U_1-Mitja_U)/sigma_u
+z
+z2 <- (U_2-Mitja_U)/sigma_u
+z2
+```
+Si calculem l'àrea associada a aquesta z, podem veure que efectivament es troba a la zona de rebuig de l'hipòtesi nul·la:
+```{r àrea de Z}
+pnorm(z)
+```
+
+##Interpretació
+
+El test U de Mann-Whitney ens permet entendre si dues mostres tenen la mateixa distribució. Si la mostra és prou gran, podem afirmar que, aplicant el test, els resultats s'acosten a una distribució Normal. Això ens permet definir fàcilments les àrees d'acceptació i de rebuig. En el nostre cas, ha estat de rebuig de l'hipòtesi nul·la i acceptació de l'alterna. 
+
+##Reflexió sobre tests paramètrics i no paramètrics
+Les distibuicions conegudes (com evidentment és la Normal) tenen un sèrie de característiques i propietats que faciliten el seu tractament. Per exemple, tenim perfectament definit el càlcul de les àrees d'acceptació o rebuig. Una prova és la funció pnorm. No necessita informació de la distribucio per a calcular l'àrea associada. En definitiva: els càlculs són més senzills, més intuitius i més coneguts.
+A més, les comparacions entre distriucions són més senzilles si són conegudes. 
+
+## Test sobre el nivell de colesterol
+Com ja hem vist, les dues distribucions són molt diferents. De fet, abans ja hem vist que Cho_final s'acosta molt a una distribució normal mentres que cho_initial té molt poca varietat de valors: 
+```{r plot cho_ini cho_fin}
+par(mfrow=c(1,2))
+plot(Cho_initial)
+plot(Cho_final)
+```
+A primer cop d'ull, si restem al colesterol final el colesterol inicial, podem apreciar que la mitja és major que 0. A més, visualment es pot veure que el 0 és fora de l'interval de confiança de la mitja. La primera impresió és que sí sembla que el colesterol final és major que el colesterol inicial.
+```{r plot summary cho_dif}
+cho_dif <- Cho_final - Cho_initial 
+summary(cho_dif)
+S_dif <- sd(cho_dif)
+S_dif
+M_dif <- mean(cho_dif)
+M_dif
+boxplot.stats(cho_dif)
+```
+Comprovem si la resta entre el colesterol final i l'inicial s'adequa a la distribució Normal.Com podem veure, és aprop però no arriba a adjustar-se a una distribució Normal.
+```{r plot normal cho_dif}
+qqplot(cho_dif, rnorm(nrow(satisfaccioLaboral)), main="Cho diferential", ylab = NULL)
+shapiro.test(cho_dif)
+```
+Utilitzarem, doncs, la distribució t de Student per a calcular l'interval de cofiança:
+$$\overline{x}\ \pm t_\frac{\alpha}{2}\frac{S}{\sqrt{n}}$$
+
+
+Per a un interval de confiança de 0.1 i 5 graus de llibertat, obtenim els valors de t de Student:
+```{r plot t_student cho_dif}
+qt(c(.05, .95), df=5)
+```
+Calculem l'interval de confiança:
+```{r plot interval cho_dif}
+M_dif + (qt(0.05, df=5) * (S_dif/sqrt(nrow(satisfaccioLaboral))))
+M_dif - (qt(0.05, df=5) * (S_dif/sqrt(nrow(satisfaccioLaboral))))
+```
+Com es pot veure, l'interval és clarament damunt del 0. Això vol dir que la mostra cho_final és més alta que cho_inicial i que pertanyen a distribucions distintes. 
+
+##Hipòtesi nul·la i alternativa
+
+$H_0$: La distribució de la mostra del colesterol final és superior a la del colesterol inicial
+
+$H_a$: Les diferències són degudes a l'atzar
+
+##Mètode
+
+El ja aplicat. Com es pot veure, els càlculs s'han aplicat sobre la resta de colesterol final - colesterol inicial. Està clar que si el valor és positiu és perque cho_final > cho_inicial. Si és 0, són iguals. Si és negatiu, cho_final < cho_inicial.
+El primer que hem fet és veure si aquesta resta segueix una distribució Normal. No és així per poc. Apliquem el test t de Student, que ens permet determinar l'interval de confiança per a una població amb mitja i variança poblacional desconeguda. L'interval NO inclou el 0 i és positiu. Això vol dir que cho_final > cho_inicial.
+
+##Càlculs
+
+Els ja fets.
+
+##Interpretació
+
+S'accepta l'hip`tesi nul·la. El nivell de colesterol s'ha incrementat entre mostres.
