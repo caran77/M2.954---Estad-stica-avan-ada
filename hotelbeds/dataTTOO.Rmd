@@ -1,0 +1,58 @@
+---
+title: "Hotelbeds"
+author: "Carlos A. García"
+date: "April 14, 2019"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+Primer establim el directori de feina
+```{r directori de feina}
+setwd("D:/Users/cagarcia/uoc/M2.954 - Estadística avançada/hotelbeds")
+```
+
+Llegim el fitxer proporcionat a la pràctica
+
+```{r llegir el document}
+bookings <- read.csv2("dataTTOO.csv", header = TRUE, sep = ",", dec = ".")
+attach(bookings)
+colnames(bookings)[colnames(bookings)=="ï..TTOO"] <- "TTOO"
+
+summary(bookings)
+created_sunday_nn <- bookings [c("TTOO", "CREATED_SUNDAY", "CREATED_SUNDAY_CANCEL_1_HOUR", "CREATED_SUNDAY_CANCEL_24_HOUR")]
+created_sunday_nn <- created_sunday_nn[created_sunday_nn$CREATED_SUNDAY > 50,]
+summary(created_sunday_nn )
+colnames(created_sunday_nn) <- c("TTOO", "CREATED", "C1", "C24")
+plot(created_sunday_nn$CREATED, col="black", main="Bookings x client",
+     xlab="Client", ylab="Number of bookings")
+hist(created_sunday_nn$CREATED)
+abline(v=quantile(created_sunday_nn$CREATED), col="red", lwd=3)
+boxplot(created_sunday_nn$CREATED)
+boxplot(created_sunday_nn$CREATED)$out
+shapiro.test(created_sunday_nn$CREATED)
+cor(created_sunday_nn[, c("CREATED", "C1", "C24")])
+
+created_tuesday_nn <- bookings [c("TTOO", "CREATED_TUESDAY", "CREATED_TUEDAY_CANCEL_1_HOUR", "CREATED_TUSDAY_CANCEL_24_HOUR")]
+created_tuesday_nn <- created_tuesday_nn[created_tuesday_nn$CREATED_TUESDAY > 50,]
+summary(created_tuesday_nn )
+colnames(created_tuesday_nn) <- c("TTOO", "CREATED", "C1", "C24")
+plot(created_tuesday_nn$CREATED, col="black", main="Bookings x client",
+     xlab="Client", ylab="Number of bookings")
+hist(created_tuesday_nn$CREATED)
+abline(v=quantile(created_tuesday_nn$CREATED), col="red", lwd=3)
+boxplot(created_tuesday_nn$CREATED)
+boxplot(created_tuesday_nn$CREATED)$out
+shapiro.test(created_tuesday_nn$CREATED)
+cor(created_tuesday_nn[, c("CREATED", "C1", "C24")])
+created_tuesday_nn$C1C24[created_tuesday_nn$C1>0] <- 
+  created_tuesday_nn$C1[created_tuesday_nn$C1>0] / 
+  created_tuesday_nn$C24[created_tuesday_nn$C1>0]
+summary(created_tuesday_nn$C1C24[created_tuesday_nn$C24>0])
+created_tuesday_nn[created_tuesday_nn$C1 == created_tuesday_nn$C24,]
+created_tuesday_nn[created_tuesday_nn$CREATED == created_tuesday_nn$C24,]
+
+```
