@@ -1,0 +1,71 @@
+---
+title: "a3"
+author: "Carlos A. García"
+date: "April 29, 2019"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+#Càrrega del fitxer
+
+Establim el directori de feina
+```{r directori de feina}
+setwd("D:/Users/cagarcia/uoc/M2.954 - Estadística avançada/A3")
+```
+
+Llegim el fitxer proporcionat a la pràctica
+
+```{r llegir el document}
+satisfaccioLaboral <- read.csv2("rawData_clean1.csv", header = TRUE, sep = ",", dec = ".")
+attach(satisfaccioLaboral)
+
+summary(satisfaccioLaboral)
+```
+#Model de regressió lineal
+
+##Model de regressió lineal múltiple (regressors quantitatius)
+
+Estimeu per mínims quadrats ordinaris un model lineal que expliqui la satisfacció laboral (happiness) d'un
+individu en funció de tres factors quantitatius: les hores treballades a la setmana (work_hours), l'edat (age),
+i els dies de baixa en el darrer any (sick_leave).
+
+Com a primera aproximació, obtenim la matriu de correlacions.
+
+```{r matriu de correlació}
+cor(satisfaccioLaboral[,c("happiness", "work_hours", "age", "sick_leave")], use="complete")
+```
+Es pot veure que la major correlació se produeix amb la variable sick_leave.
+
+```{r model de regressió lineal múltiple quantitatius}
+lmFrame <- lm(formula = happiness ~ work_hours + age + sick_leave, data = satisfaccioLaboral)
+summary(lmFrame)
+```
+###Avalueu la bondat d'ajust a través del coeficient de determinació (R2) i interpreteu-lo.
+Com es pot veure $R^{2}$ és molt pobre (1 representa l'ajust perfecte, 0 cap ajust). Un ajust tan baix implica que la recta de regressió no és gaire bona.
+```{r model de regressió lineal múltiple quantitatius R2}
+summary(lmFrame)$r.squared
+```
+###A més, avalueu si algun dels regressos té influència significativa
+Les tres variables tenen Pr(>|t|) < 5%, el que implica que les tres tenen una influència significativa.
+```{r model de regressió lineal múltiple quantitatius pvalues}
+summary(lmFrame)$coefficients[,4]
+```
+El signe és negatiu en el cas de les variables work_hours i sick_leave. Això vol dir que, com més creixen aquests dos valors, més baixa el nivell de happiness. El signe d'age és possitiu; augmenta el happiness a mida que creix l'age.
+```{r model de regressió lineal múltiple quantitatius estimate}
+summary(lmFrame)$coefficients[,1]
+```
+###Des del punt de vista de la qualitat del model de regressiu, podeu indicar una raó que justifiqui la no inclusió de seniority?
+La correlació d'ambdues variables és molt elevada. Això implica que incloure seniority és afegir una variable redundant. Només com a nota, dir que el valor $R^{2}$ empitjora a mida que s'afegeixen variables.
+```{r matriu de correlació seniority age}
+cor(satisfaccioLaboral[,c("seniority", "age")], use="complete")
+```
+##Model de regressió lineal múltiple (regressors quantitatius i qualitatius)
+Estimeu per mínims quadrats ordinaris un model lineal que expliqui la satisfacció laboral (happiness) d'un individu en funció de cinc regressors.
+```{r dummy columns}
+satisfaccioLaboral$sexR <- relevel(satisfaccioLaboral$sex, ref = "F")
+satisfaccioLaboral$educ_levelR <- relevel(satisfaccioLaboral$educ_level, ref = "N")
+lmFrame <- lm(formula = happiness ~ work_hours + age + sick_leave + sexR + educ_levelR, data = satisfaccioLaboral)
+summary(lmFrame)
+```
