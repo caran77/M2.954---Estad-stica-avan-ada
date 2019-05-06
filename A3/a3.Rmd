@@ -66,6 +66,7 @@ Estimeu per mínims quadrats ordinaris un model lineal que expliqui la satisfacci
 ```{r dummy columns}
 satisfaccioLaboral$sexR <- relevel(satisfaccioLaboral$sex, ref = "F")
 satisfaccioLaboral$educ_levelR <- relevel(satisfaccioLaboral$educ_level, ref = "N")
-lmFrame <- lm(formula = happiness ~ work_hours + age + sick_leave + sexR + educ_levelR, data = satisfaccioLaboral)
+lmFrame <- lm(formula = happiness ~ work_hours + age + sick_leave + sexR 
+              + educ_levelR, data = satisfaccioLaboral)
 summary(lmFrame)
 ```
