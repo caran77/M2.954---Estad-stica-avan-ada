@@ -46,6 +46,7 @@ summary(lmFrame)
 Com es pot veure $R^{2}$ és molt pobre (1 representa l'ajust perfecte, 0 cap ajust). Un ajust tan baix implica que la recta de regressió no és gaire bona.
 ```{r model de regressió lineal múltiple quantitatius R2}
 summary(lmFrame)$r.squared
+summary(lmFrame)$adj.r.squared
 ```
 ###A més, avalueu si algun dels regressos té influència significativa
 Les tres variables tenen Pr(>|t|) < 5%, el que implica que les tres tenen una influència significativa.
@@ -57,16 +58,102 @@ El signe és negatiu en el cas de les variables work_hours i sick_leave. Això vol
 summary(lmFrame)$coefficients[,1]
 ```
 ###Des del punt de vista de la qualitat del model de regressiu, podeu indicar una raó que justifiqui la no inclusió de seniority?
-La correlació d'ambdues variables és molt elevada. Això implica que incloure seniority és afegir una variable redundant. Només com a nota, dir que el valor $R^{2}$ empitjora a mida que s'afegeixen variables.
+La correlació d'ambdues variables és molt elevada. Això implica que incloure seniority és afegir una variable redundant. Si existeix dependència entre les variables, direm
+que hi ha multicol·linealitat.
+
+Només com a nota, dir que el valor $R^{2}$ empitjora a mida que s'afegeixen variables.
 ```{r matriu de correlació seniority age}
 cor(satisfaccioLaboral[,c("seniority", "age")], use="complete")
 ```
 ##Model de regressió lineal múltiple (regressors quantitatius i qualitatius)
 Estimeu per mínims quadrats ordinaris un model lineal que expliqui la satisfacció laboral (happiness) d'un individu en funció de cinc regressors.
-```{r dummy columns}
+```{r create dummy columns}
 satisfaccioLaboral$sexR <- relevel(satisfaccioLaboral$sex, ref = "F")
 satisfaccioLaboral$educ_levelR <- relevel(satisfaccioLaboral$educ_level, ref = "N")
+```
+Un cop creades les noves variables, calculeu el model lineal usant la funció d'R lm
+```{r dummy columns}
 lmFrame <- lm(formula = happiness ~ work_hours + age + sick_leave + sexR 
               + educ_levelR, data = satisfaccioLaboral)
 summary(lmFrame)
 ```
+Avalueu la bondat d'ajust a través del coeficient de determinació (R2) i compareu el resultat d'aquest model amb l'obtingut a l'apartat 1.1. Per a fer-ho, useu el coeficient R2 ajustat en la comparació. 
+El coeficient R2 adjustat és lleugerament superior als obtinguts a l'apartat 1.1. Això vol dir que s'adjusta lleugerament millor, malgrat continúa sent un resultat pobre.
+```{r r2 amb dummy columns}
+summary(lmFrame)$r.squared
+summary(lmFrame)$adj.r.squared
+```
+Interpreteu també el significat dels coeficients obtinguts i la seva significació estadística. En particular, quina interpretació feu dels tres coeficients associats al factor educ_levelR?
+Per una banda tenim els coeficients depenent de la variable:
+```{r coeficients amb dummy columns}
+summary(lmFrame)$coefficients[,1]
+```
+I per un altre, el p-value que ens indica la seva significació estadística (si és major de 5%, entenem que no és representativa)
+```{r significat amb dummy columns}
+summary(lmFrame)$coefficients[,4]
+
+```
+En el cas , particular de la satisfacció laboral en funció del nivell d'estudis:
+\begin{enumerate}
+\item Tant si els estudis són primaris com secundaris, el nivell de satisfacció és un 17\% inferior amb un nivell de significació proper al 3\%. Els treballadors amb estudis primaris o secundaris són més infeliços que els que no tenen estudis. El baix nivell de significació indica que és una dada representativa.
+\item Si els estudis són universitaris, el nivell de satisfacció és un 80\% inferior amb un nivell de significació molt proper a 0. Els treballadors amb estudis universitaris són més feliços que els que no tenen estudis. El baix nivell de significació indica que és una dada representativa.
+\end{enumerate}
+##Realitzeu una predicció de la satisfacció laboral amb els dos models
+Realitzeu la predicció del nivell de satifacció laboral d'una treballadora de 30 anys d'edat, amb 10 anys d'antiguitat a l'empresa, nivell educatiu de formació professional, que treballa 37 hores a la setmana i que va estar 7 dies de baixa l'any passat.
+Al segon model no tenim en compte els anys d'experiència; calculat manualment tenim un happiness previst de:
+```{r happiness lmframe 2}
+ageVar <- 30
+working_hoursVar <- 37
+sick_daysVar <- 7
+educ_leveVar <- "S"
+sexVar <- "F"
+happiness <- lmFrame$coefficients[1] + lmFrame$coefficients[7]+ 
+  ageVar * lmFrame$coefficients[3] + 
+  working_hoursVar * lmFrame$coefficients[2] + sick_daysVar * lmFrame$coefficients[4]
+happiness
+```
+Al primer model no tenim en compte ni els anys d'experiència ni el sexe; calculat manualment tenim un happiness previst de:
+```{r happiness lmframe 1}
+lmFrame1 <- lm(formula = happiness ~ work_hours + age + sick_leave, data = satisfaccioLaboral)
+happiness1 <- lmFrame1$coefficients[1] +  
+  ageVar * lmFrame1$coefficients[3] + 
+  working_hoursVar * lmFrame1$coefficients[2] + sick_daysVar * lmFrame1$coefficients[4]
+happiness1
+```
+Realitzeu la predicció de la satisfacció laboral (happiness) i el càlcul de l'interval de confiança amb els dos models. Interpreteu els resultats.
+
+Podem veure que els resultats són els mateixos que els realitzats amb els càlculs manuals. Calculem amb un interval de confiança del 95%:
+```{r intervals de confiança}
+newdata = data.frame(work_hours = working_hoursVar, age = ageVar, sick_leave = sick_daysVar)
+predict.lm(lmFrame1, newdata, interval = "confidence", level = 0.95)
+newdata = data.frame(work_hours = working_hoursVar, age = ageVar, sick_leave = sick_daysVar, 
+                     sexR=sexVar, educ_levelR=educ_leveVar)
+predict.lm(lmFrame, newdata, interval = "confidence", level = 0.95)
+```
+Com es pot veure, els valors i els intervals canvien depenent del model. El segon model incorpora el nivell d'educació, que és representativa. Tambè inclou el sexe, que no ho és. 
+
+#Model de regressió logística
+
+
+##Estimació d'un model de regressió logística
+
+El primer pas serà crear una variable binària (low_happiness) que indiqui la condició de satisfacció baixa (low_happiness = 1) si happiness <= 4 o satisfacció normal/alta (low_happiness = 0) si happiness > 4.
+```{r calcul low happiness}
+satisfaccioLaboral$low_happiness <- ifelse(satisfaccioLaboral$happiness<=4, 1, 0)
+```
+###Calculeu el model de regressió logística on la variable dependent és "low_happiness" i les explicatives són work_hours, sexR i sick_leave
+```{r regressió low happiness}
+lmFrame <- glm(formula = low_happiness ~ work_hours + sexR + sick_leave, data = satisfaccioLaboral)
+summary(lmFrame)
+```
+###Avaluaeu si algú dels regressores té influència significativa (p-valor del contrast individual inferior al 5%).
+
+Sí. Les variables  work_hours i sick_leave tenen una influència significativa. El seu p-value és molt proper a 0.
+
+###Avaluant els resultats, es pot dir que un individu amb moltes hores de treball té major probabilitat de tenir "low.happiness"?
+
+Sí, ja que el coeficient és positiu (en aquest cas, 1 és low.happiness; més elevat significa "més trist") i la variable té una influència significativa.
+
+###Es pot afirmar a partir del model que ser dona augmenta la probabilitat de tenir "low.happiness"?
+
+No. Sí que a primera vista ho sembla (el coefient de home és negatiu, el que vol dir menys infelicitat). No ho podem afrimar perque la variable no té una influència significativa.
