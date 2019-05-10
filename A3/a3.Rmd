@@ -27,9 +27,7 @@ summary(satisfaccioLaboral)
 
 ##Model de regressió lineal múltiple (regressors quantitatius)
 
-Estimeu per mínims quadrats ordinaris un model lineal que expliqui la satisfacció laboral (happiness) d'un
-individu en funció de tres factors quantitatius: les hores treballades a la setmana (work_hours), l'edat (age),
-i els dies de baixa en el darrer any (sick_leave).
+###Estimeu per mínims quadrats ordinaris un model lineal que expliqui la satisfacció laboral (happiness) d'un individu en funció de tres factors quantitatius: les hores treballades a la setmana (work_hours), l'edat (age), i els dies de baixa en el darrer any (sick_leave).
 
 Com a primera aproximació, obtenim la matriu de correlacions.
 
@@ -66,24 +64,24 @@ Només com a nota, dir que el valor $R^{2}$ empitjora a mida que s'afegeixen vari
 cor(satisfaccioLaboral[,c("seniority", "age")], use="complete")
 ```
 ##Model de regressió lineal múltiple (regressors quantitatius i qualitatius)
-Estimeu per mínims quadrats ordinaris un model lineal que expliqui la satisfacció laboral (happiness) d'un individu en funció de cinc regressors.
+###Estimeu per mínims quadrats ordinaris un model lineal que expliqui la satisfacció laboral (happiness) d'un individu en funció de cinc regressors.
 ```{r create dummy columns}
 satisfaccioLaboral$sexR <- relevel(satisfaccioLaboral$sex, ref = "F")
 satisfaccioLaboral$educ_levelR <- relevel(satisfaccioLaboral$educ_level, ref = "N")
 ```
-Un cop creades les noves variables, calculeu el model lineal usant la funció d'R lm
+###Un cop creades les noves variables, calculeu el model lineal usant la funció d'R lm
 ```{r dummy columns}
 lmFrame <- lm(formula = happiness ~ work_hours + age + sick_leave + sexR 
               + educ_levelR, data = satisfaccioLaboral)
 summary(lmFrame)
 ```
-Avalueu la bondat d'ajust a través del coeficient de determinació (R2) i compareu el resultat d'aquest model amb l'obtingut a l'apartat 1.1. Per a fer-ho, useu el coeficient R2 ajustat en la comparació. 
+###Avalueu la bondat d'ajust a través del coeficient de determinació (R2) i compareu el resultat d'aquest model amb l'obtingut a l'apartat 1.1. Per a fer-ho, useu el coeficient R2 ajustat en la comparació. 
 El coeficient R2 adjustat és lleugerament superior als obtinguts a l'apartat 1.1. Això vol dir que s'adjusta lleugerament millor, malgrat continúa sent un resultat pobre.
 ```{r r2 amb dummy columns}
 summary(lmFrame)$r.squared
 summary(lmFrame)$adj.r.squared
 ```
-Interpreteu també el significat dels coeficients obtinguts i la seva significació estadística. En particular, quina interpretació feu dels tres coeficients associats al factor educ_levelR?
+###Interpreteu també el significat dels coeficients obtinguts i la seva significació estadística. En particular, quina interpretació feu dels tres coeficients associats al factor educ_levelR?
 Per una banda tenim els coeficients depenent de la variable:
 ```{r coeficients amb dummy columns}
 summary(lmFrame)$coefficients[,1]
@@ -134,7 +132,6 @@ Com es pot veure, els valors i els intervals canvien depenent del model. El sego
 
 #Model de regressió logística
 
-
 ##Estimació d'un model de regressió logística
 
 El primer pas serà crear una variable binària (low_happiness) que indiqui la condició de satisfacció baixa (low_happiness = 1) si happiness <= 4 o satisfacció normal/alta (low_happiness = 0) si happiness > 4.
@@ -143,10 +140,10 @@ satisfaccioLaboral$low_happiness <- ifelse(satisfaccioLaboral$happiness<=4, 1, 0
 ```
 ###Calculeu el model de regressió logística on la variable dependent és "low_happiness" i les explicatives són work_hours, sexR i sick_leave
 ```{r regressió low happiness}
-lmFrame <- glm(formula = low_happiness ~ work_hours + sexR + sick_leave, data = satisfaccioLaboral)
-summary(lmFrame)
+glmFrame <- glm(formula = low_happiness ~ work_hours + sexR + sick_leave, data = satisfaccioLaboral)
+summary(glmFrame)
 ```
-###Avaluaeu si algú dels regressores té influència significativa (p-valor del contrast individual inferior al 5%).
+###Avalueu si algú dels regressores té influència significativa (p-valor del contrast individual inferior al 5%).
 
 Sí. Les variables  work_hours i sick_leave tenen una influència significativa. El seu p-value és molt proper a 0.
 
@@ -157,3 +154,34 @@ Sí, ja que el coeficient és positiu (en aquest cas, 1 és low.happiness; més elev
 ###Es pot afirmar a partir del model que ser dona augmenta la probabilitat de tenir "low.happiness"?
 
 No. Sí que a primera vista ho sembla (el coefient de home és negatiu, el que vol dir menys infelicitat). No ho podem afrimar perque la variable no té una influència significativa.
+
+##Predicció en el model lineal generalizat (model de regressió logística)
+
+###Usant el model anterior, calculeu la probabilitat de tenir un baix happiness (low_happiness) per a un home que treballa 40 hores a la setmana i va estar 15 dies de baixa l'any passat.
+Podem veure que fent els càlculs, tant de forma automàtica (funció predict.glm) com manual, el resultat és el mateix (proper a 1).
+```{r regressió log predict man}
+working_hoursVar <- 40
+sick_daysVar <- 15
+sexVar <- "M"
+glmFrame$coefficients
+happiness <- glmFrame$coefficients[1] + glmFrame$coefficients[3] +
+  working_hoursVar * glmFrame$coefficients[2] + sick_daysVar * glmFrame$coefficients[4]
+happiness
+newdata = data.frame(work_hours = working_hoursVar, sexR = sexVar, sick_leave = sick_daysVar)
+predict.glm(glmFrame, newdata)
+```
+##Millora del model
+```{r regressió log city}
+cityVar = "Barcelona"
+satisfaccioLaboral$cityR <- relevel(satisfaccioLaboral$city, ref = cityVar)
+glmFrameCity <- glm(formula = low_happiness ~ work_hours + sexR + sick_leave + cityR, 
+                    data = satisfaccioLaboral)
+summary(glmFrameCity)
+glmFrameEduc <- glm(formula = low_happiness ~ work_hours + sexR + sick_leave + educ_levelR, 
+                    data = satisfaccioLaboral)
+summary(glmFrameEduc)
+glmFrameCityEduc <- glm(formula = low_happiness ~ work_hours + sexR + sick_leave + educ_levelR + cityR, 
+                    data = satisfaccioLaboral)
+summary(glmFrameCityEduc)
+
+```
