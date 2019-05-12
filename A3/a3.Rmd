@@ -171,7 +171,16 @@ newdata = data.frame(work_hours = working_hoursVar, sexR = sexVar, sick_leave = 
 predict.glm(glmFrame, newdata)
 ```
 ##Millora del model
-```{r regressió log city}
+##Decidiu si es prefereix el model inicial o bé un dels models amb cityR, amb educ_levelR, o amb les dues.
+Primer obtenim les diferentes línees logaritmíques de regressió. Concretament:
+
+\begin{enumerate}
+\item Incloent la ciutat, prenent com a referència Barcelona (frame glmFrameCity)
+\item Incloent el nivell d'estudis, prenent com a referència els estudis bàsics (frame glmFrameEduc)
+\item Incloent les ambdues anteriors (frame glmFrameCityEduc)
+\end{enumerate}
+
+```{r regressió log city study}
 cityVar = "Barcelona"
 satisfaccioLaboral$cityR <- relevel(satisfaccioLaboral$city, ref = cityVar)
 glmFrameCity <- glm(formula = low_happiness ~ work_hours + sexR + sick_leave + cityR, 
@@ -183,5 +192,104 @@ summary(glmFrameEduc)
 glmFrameCityEduc <- glm(formula = low_happiness ~ work_hours + sexR + sick_leave + educ_levelR + cityR, 
                     data = satisfaccioLaboral)
 summary(glmFrameCityEduc)
-
 ```
+Com es pot veure, el menor AIC és el del model que inclou ciutat i nivell d'estudis:
+```{r regressió AIC}
+AIC(glmFrameCity)
+AIC(glmFrameEduc)
+AIC(glmFrameCityEduc)
+```
+Crida molt l'atenció com creix el nivell de lowHappiness si la persona fa feina a Santiago de Compostela. A més, el valor és representatiu, ja que el nivell de p-value és molt proper a 0.
+Com a nota, dir que AIC$\footnote[1]{\url{https://en.wikipedia.org/wiki/Akaike_information_criterion}}$ és l'acrònim de "Akaike information criterion". És un estimador relatiu de la quallitat d'un model estadístic per a un conjunt de dades.
+Dir que es correspon amb:
+$$ AIC = 2k - 2ln(L)$$
+On k és el nombre de variables i L és el màxim valor de la funció de verosimilitut per al model estimat
+##Qualitat de l'ajust
+###Calculeu la matriu de confusió del millor model de l'apartat 2.3 suposant un llindar de discriminació del 75%
+
+Obtenim la matriu de confusió on mostram les variables:
+\begin{enumerate}
+\item falsePositive. Nombre de falsos positius; el nivell real de low\_happiness és 1, però obtenim una probalitat menor del 75\% de que així sigui segons la recta de regressió.
+\item okPredictPositive. Nombre de positius que es preveuen com a positius; el nivell real de low\_happiness és 1 i obtenim una probalitat igual o superior al 75\% de que així sigui segons la recta de regressió. La previsió segons la recta de regressió és correcta.
+\item okPredictNegative. Nombre de negatius que es preveuen com a negatius; el nivell real de low\_happiness és 0 i obtenim una probalitat inferior al 75\% de que així sigui segons la recta de regressió. La previsió segons la recta de regressió és correcta.
+\item falseNegative. Nombre de falsos negatius; el nivell real de low\_happiness és 0, però obtenim una probalitat igual o superior al 75\% de que el low\_happiness sigui 1 segons la recta de regressió.
+\end{enumerate}
+
+```{r confusion matrix}
+satisfaccioLaboral$low_happiness_predict <- predict(glmFrameCityEduc)
+
+pThreshold <- 0.75
+falsePositive <- length(satisfaccioLaboral$low_happiness_predict[
+  satisfaccioLaboral$low_happiness_predict >= pThreshold 
+  & satisfaccioLaboral$low_happiness == 0])
+okPredictPositive <- length(satisfaccioLaboral$low_happiness_predict[
+  satisfaccioLaboral$low_happiness_predict >= pThreshold 
+  & satisfaccioLaboral$low_happiness == 1])
+okPredictNegative <- length(satisfaccioLaboral$low_happiness_predict[
+  satisfaccioLaboral$low_happiness_predict < pThreshold 
+  & satisfaccioLaboral$low_happiness == 0])
+falseNegative <- length(satisfaccioLaboral$low_happiness_predict[
+  satisfaccioLaboral$low_happiness_predict < pThreshold 
+  & satisfaccioLaboral$low_happiness == 1])
+falsePositive
+okPredictPositive
+okPredictNegative
+falseNegative
+```
+El percentatge de valors correctament classificats és:
+```{r ok classified}
+okClassified <- (okPredictPositive + okPredictNegative)/(nrow(satisfaccioLaboral))
+okClassified
+```
+El percentatge de valors classificats erròniament és:
+```{r ko classified}
+koClassified <- (falsePositive + falseNegative)/(nrow(satisfaccioLaboral))
+koClassified
+```
+##Corba ROC
+
+###Realitzeu el dibuix de les corbes ROC per a representar la qualitat dels models predictius obtinguts a l'apartat 2.3 en un únic gràfic
+```{r ROC}
+par(pty = "s")
+rocCityEduc <- pROC::roc(satisfaccioLaboral$low_happiness, glmFrameCityEduc$fitted.values, plot=TRUE, percent=TRUE,
+          legacy.axes=TRUE, lwd=1, col="#3737ff",
+          xlab="False positive percentage", ylab="True positive percentage", add=FALSE, print.auc.y=40)
+rocCity <- pROC::roc(satisfaccioLaboral$low_happiness, glmFrameCity$fitted.values, plot=TRUE, percent=TRUE,
+          legacy.axes=TRUE, lwd=1, col="#ff3737",
+          xlab="False positive percentage", ylab="True positive percentage", add=TRUE, print.auc.y=40)
+rocEduc <- pROC::roc(satisfaccioLaboral$low_happiness, glmFrameEduc$fitted.values, plot=TRUE, percent=TRUE,
+          legacy.axes=TRUE, lwd=1, col="#37ff37",
+          xlab="False positive percentage", ylab="True positive percentage", add=TRUE, print.auc.y=40)
+```
+Imprimim els gràfics en percentatge per a veure-ho millor. La recta diagonal representa el cas en el que la proporció d'elements bé classificats és igual al percentatge d'elements mal classificats. És a dir: com més allunyada estigui la corva ROC de la recta, major és el percentatge d'elements bé classificats. Es veu clarament que el millor classificador és el que inclou la ciutat i el nivell educatiu (corba blava). Els altres dos classificadors són molt similars.
+El valor AUC se correspon amb l'àrea sota la corba. Com major sigui aquesta àrea, més allunyada està la corba i millor és el classificador. Podem veure que es confirma que el millor classificador és el que inclou la ciutat i el nivell d'educació.
+```{r AUC}
+pROC::auc(rocCityEduc)
+pROC::auc(rocCity)
+pROC::auc(rocEduc)
+```
+Podem veure que la corva blava s'allunya més de la recta sobre el 55%. Així, sembla que se classificaran millor més elements si prenem aquest límit. Fent la prova:
+```{r confusion matrix 55}
+pThreshold <- 0.55
+falsePositive <- length(satisfaccioLaboral$low_happiness_predict[
+  satisfaccioLaboral$low_happiness_predict >= pThreshold 
+  & satisfaccioLaboral$low_happiness == 0])
+okPredictPositive <- length(satisfaccioLaboral$low_happiness_predict[
+  satisfaccioLaboral$low_happiness_predict >= pThreshold 
+  & satisfaccioLaboral$low_happiness == 1])
+okPredictNegative <- length(satisfaccioLaboral$low_happiness_predict[
+  satisfaccioLaboral$low_happiness_predict < pThreshold 
+  & satisfaccioLaboral$low_happiness == 0])
+falseNegative <- length(satisfaccioLaboral$low_happiness_predict[
+  satisfaccioLaboral$low_happiness_predict < pThreshold 
+  & satisfaccioLaboral$low_happiness == 1])
+falsePositive
+okPredictPositive
+okPredictNegative
+falseNegative
+okClassified <- (okPredictPositive + okPredictNegative)/(nrow(satisfaccioLaboral))
+okClassified
+koClassified <- (falsePositive + falseNegative)/(nrow(satisfaccioLaboral))
+koClassified
+```
+Podem veure que, efectivament, el percentatge és clarament millor. 
