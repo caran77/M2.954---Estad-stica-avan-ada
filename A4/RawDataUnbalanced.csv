@@ -1,0 +1,953 @@
+"sex" "educ_level" "monthly_income" "martial_status" "residence" "psqi" "income_monthly_c" "sleep_duration_avg"
+"1" "M" "Primary" "Inc1" "Married" "Urban" 19 4621.6275 7.1
+"2" "M" "Primary" "Inc1" "Married" "Urban" 18 4765.46 8.1
+"5" "M" "Primary" "Inc1" "Married" "Urban" 21 4228.245 7.2
+"6" "M" "Primary" "Inc1" "Married" "Urban" 19 4575.9875 8.1
+"7" "M" "Primary" "Inc1" "Married" "Rural" 17 4509.6275 7.6
+"8" "M" "Primary" "Inc1" "Married" "Rural" 18 4588.115 7.9
+"9" "M" "Primary" "Inc1" "Married" "Rural" 16 4789.9775 6.9
+"10" "M" "Primary" "Inc1" "Married" "Rural" 15 4809.14 8.4
+"11" "M" "Primary" "Inc1" "Married" "Rural" 14 5080.355 7.5
+"12" "M" "Primary" "Inc1" "Married" "Rural" 14 4814.18 7.1
+"13" "M" "Primary" "Inc1" "Single" "Urban" 15 4821.7225 8.6
+"14" "M" "Primary" "Inc1" "Single" "Urban" 16 4434.4825 6.7
+"16" "M" "Primary" "Inc1" "Single" "Urban" 15 4915.9075 7.7
+"17" "M" "Primary" "Inc1" "Single" "Urban" 15 4870.4425 7.6
+"18" "M" "Primary" "Inc1" "Single" "Urban" 16 4812.465 5.9
+"19" "M" "Primary" "Inc1" "Single" "Rural" 14 4906.09 5.8
+"20" "M" "Primary" "Inc1" "Single" "Rural" 13 4835.1275 5.9
+"21" "M" "Primary" "Inc1" "Single" "Rural" 11 5090.2425 6
+"22" "M" "Primary" "Inc1" "Single" "Rural" 14 4718.7875 5.5
+"23" "M" "Primary" "Inc1" "Single" "Rural" 12 4800.075 6.5
+"25" "M" "Primary" "Inc1" "Divorced" "Urban" 22 4373.4425 9.2
+"27" "M" "Primary" "Inc1" "Divorced" "Urban" 21 4357.5525 7.3
+"28" "M" "Primary" "Inc1" "Divorced" "Urban" 22 4714.885 6.8
+"29" "M" "Primary" "Inc1" "Divorced" "Urban" 22 4406.99 9.9
+"30" "M" "Primary" "Inc1" "Divorced" "Urban" 21 4404.9075 8.4
+"31" "M" "Primary" "Inc1" "Divorced" "Rural" 17 4553.6225 7
+"32" "M" "Primary" "Inc1" "Divorced" "Rural" 18 4563.1775 8.2
+"33" "M" "Primary" "Inc1" "Divorced" "Rural" 17 4435.5675 5.9
+"34" "M" "Primary" "Inc1" "Divorced" "Rural" 16 4467.61 6.3
+"36" "M" "Primary" "Inc1" "Divorced" "Rural" 17 4618.985 6.6
+"37" "M" "Primary" "Inc1" "Widowed" "Urban" 28 4316.9 11.2
+"38" "M" "Primary" "Inc1" "Widowed" "Urban" 27 4239.5675 7.7
+"39" "M" "Primary" "Inc1" "Widowed" "Urban" 27 4548.495 8.8
+"40" "M" "Primary" "Inc1" "Widowed" "Urban" 25 4512.1125 9.8
+"41" "M" "Primary" "Inc1" "Widowed" "Urban" 25 4248.895 8.7
+"42" "M" "Primary" "Inc1" "Widowed" "Urban" 27 4084.6225 8.4
+"43" "M" "Primary" "Inc1" "Widowed" "Rural" 23 4489.4325 8.1
+"44" "M" "Primary" "Inc1" "Widowed" "Rural" 22 4266.7275 7.4
+"45" "M" "Primary" "Inc1" "Widowed" "Rural" 23 4319.21 9.2
+"47" "M" "Primary" "Inc1" "Widowed" "Rural" 22 4421.8475 8.4
+"48" "M" "Primary" "Inc1" "Widowed" "Rural" 23 4512.3225 9.1
+"49" "M" "Primary" "Inc2" "Married" "Urban" 18 4767.98 7.9
+"50" "M" "Primary" "Inc2" "Married" "Urban" 16 4425.995 7
+"51" "M" "Primary" "Inc2" "Married" "Urban" 15 4461.45 7.6
+"52" "M" "Primary" "Inc2" "Married" "Urban" 16 4580.45 7.1
+"53" "M" "Primary" "Inc2" "Married" "Urban" 17 4571.6475 8.5
+"54" "M" "Primary" "Inc2" "Married" "Urban" 18 4534.9675 8
+"57" "M" "Primary" "Inc2" "Married" "Rural" 13 4998.91 6.2
+"58" "M" "Primary" "Inc2" "Married" "Rural" 12 4905.635 5.9
+"59" "M" "Primary" "Inc2" "Married" "Rural" 14 4608.66 6.9
+"60" "M" "Primary" "Inc2" "Married" "Rural" 14 4762.8175 5.7
+"61" "M" "Primary" "Inc2" "Single" "Urban" 13 4800.11 5.3
+"64" "M" "Primary" "Inc2" "Single" "Urban" 13 4667.53 6
+"66" "M" "Primary" "Inc2" "Single" "Urban" 14 4818.4675 5.2
+"67" "M" "Primary" "Inc2" "Single" "Rural" 11 5306.2275 6.9
+"68" "M" "Primary" "Inc2" "Single" "Rural" 11 4960.025 6.4
+"69" "M" "Primary" "Inc2" "Single" "Rural" 10 4673.8825 6.3
+"70" "M" "Primary" "Inc2" "Single" "Rural" 10 4776.625 5.8
+"71" "M" "Primary" "Inc2" "Single" "Rural" 12 4570.16 5.2
+"72" "M" "Primary" "Inc2" "Single" "Rural" 11 5262.04 5.6
+"73" "M" "Primary" "Inc2" "Divorced" "Urban" 18 4296.6525 6.9
+"74" "M" "Primary" "Inc2" "Divorced" "Urban" 20 4287.7275 7.4
+"75" "M" "Primary" "Inc2" "Divorced" "Urban" 18 4773.0725 7.4
+"76" "M" "Primary" "Inc2" "Divorced" "Urban" 21 4869.6375 8.7
+"77" "M" "Primary" "Inc2" "Divorced" "Urban" 19 4346.51 8.5
+"78" "M" "Primary" "Inc2" "Divorced" "Urban" 20 4334.1375 8.9
+"79" "M" "Primary" "Inc2" "Divorced" "Rural" 15 4868.745 5.8
+"80" "M" "Primary" "Inc2" "Divorced" "Rural" 15 4601.8 6.4
+"83" "M" "Primary" "Inc2" "Divorced" "Rural" 15 4764.515 6.8
+"84" "M" "Primary" "Inc2" "Divorced" "Rural" 17 4787.86 7
+"85" "M" "Primary" "Inc2" "Widowed" "Urban" 24 4230.7825 11.2
+"88" "M" "Primary" "Inc2" "Widowed" "Urban" 25 4359.9325 9
+"89" "M" "Primary" "Inc2" "Widowed" "Urban" 25 4884.3025 9.7
+"91" "M" "Primary" "Inc2" "Widowed" "Rural" 21 4568.83 9.7
+"92" "M" "Primary" "Inc2" "Widowed" "Rural" 23 4676.6475 7.6
+"93" "M" "Primary" "Inc2" "Widowed" "Rural" 22 4707.0975 8.9
+"94" "M" "Primary" "Inc2" "Widowed" "Rural" 22 4421.2875 8.6
+"96" "M" "Primary" "Inc2" "Widowed" "Rural" 23 4859.5925 8.7
+"97" "M" "Primary" "Inc3" "Married" "Urban" 17 4736.0075 6.9
+"98" "M" "Primary" "Inc3" "Married" "Urban" 18 4635.8725 7.2
+"99" "M" "Primary" "Inc3" "Married" "Urban" 17 4495.575 6.5
+"100" "M" "Primary" "Inc3" "Married" "Urban" 17 4604.32 10.1
+"101" "M" "Primary" "Inc3" "Married" "Urban" 16 4556.195 6.2
+"102" "M" "Primary" "Inc3" "Married" "Urban" 18 4501.0175 7.1
+"103" "M" "Primary" "Inc3" "Married" "Rural" 13 4764.2 6.8
+"104" "M" "Primary" "Inc3" "Married" "Rural" 14 4609.185 6
+"106" "M" "Primary" "Inc3" "Married" "Rural" 15 5006.19 6.9
+"107" "M" "Primary" "Inc3" "Married" "Rural" 13 5055.1725 7.4
+"108" "M" "Primary" "Inc3" "Married" "Rural" 14 4756.955 7
+"109" "M" "Primary" "Inc3" "Single" "Urban" 13 4727.1525 7.2
+"110" "M" "Primary" "Inc3" "Single" "Urban" 15 4815.9825 7.8
+"111" "M" "Primary" "Inc3" "Single" "Urban" 13 4842.285 6
+"112" "M" "Primary" "Inc3" "Single" "Urban" 14 5091.45 5.6
+"113" "M" "Primary" "Inc3" "Single" "Urban" 14 4499.1975 4.9
+"114" "M" "Primary" "Inc3" "Single" "Urban" 13 5009.9525 4.9
+"115" "M" "Primary" "Inc3" "Single" "Rural" 11 4419.1175 6
+"116" "M" "Primary" "Inc3" "Single" "Rural" 10 5078.465 5.3
+"117" "M" "Primary" "Inc3" "Single" "Rural" 10 5189.6775 7.7
+"120" "M" "Primary" "Inc3" "Single" "Rural" 11 4794.5975 6.6
+"121" "M" "Primary" "Inc3" "Divorced" "Urban" 21 4429.215 7.4
+"122" "M" "Primary" "Inc3" "Divorced" "Urban" 18 4433.4325 8.9
+"124" "M" "Primary" "Inc3" "Divorced" "Urban" 18 4677.645 7.6
+"125" "M" "Primary" "Inc3" "Divorced" "Urban" 19 4784.99 5.4
+"126" "M" "Primary" "Inc3" "Divorced" "Urban" 21 4624.655 7.4
+"127" "M" "Primary" "Inc3" "Divorced" "Rural" 17 4740.05 8
+"128" "M" "Primary" "Inc3" "Divorced" "Rural" 17 4947.915 6.9
+"130" "M" "Primary" "Inc3" "Divorced" "Rural" 17 4843.195 7.1
+"131" "M" "Primary" "Inc3" "Divorced" "Rural" 17 4809.42 8.1
+"133" "M" "Primary" "Inc3" "Widowed" "Urban" 26 4269.1775 9.5
+"135" "M" "Primary" "Inc3" "Widowed" "Urban" 23 4482.1175 8.1
+"136" "M" "Primary" "Inc3" "Widowed" "Urban" 26 4408.6175 8.9
+"137" "M" "Primary" "Inc3" "Widowed" "Urban" 25 4504.815 8.5
+"138" "M" "Primary" "Inc3" "Widowed" "Urban" 27 4174.5375 9.9
+"139" "M" "Primary" "Inc3" "Widowed" "Rural" 22 4673.4275 9.2
+"140" "M" "Primary" "Inc3" "Widowed" "Rural" 21 4645.7425 8.2
+"143" "M" "Primary" "Inc3" "Widowed" "Rural" 21 4606.105 7.5
+"144" "M" "Primary" "Inc3" "Widowed" "Rural" 23 4055.6425 7.9
+"145" "M" "Primary" "Inc4" "Married" "Urban" 14 4960.655 5.6
+"146" "M" "Primary" "Inc4" "Married" "Urban" 12 4426.625 7.6
+"147" "M" "Primary" "Inc4" "Married" "Urban" 13 4952.325 5.7
+"148" "M" "Primary" "Inc4" "Married" "Urban" 11 4994.185 5.7
+"151" "M" "Primary" "Inc4" "Married" "Rural" 10 4853.8525 6.9
+"152" "M" "Primary" "Inc4" "Married" "Rural" 11 4806.97 8.2
+"153" "M" "Primary" "Inc4" "Married" "Rural" 9 4771.655 4.6
+"154" "M" "Primary" "Inc4" "Married" "Rural" 10 4991.945 7.1
+"156" "M" "Primary" "Inc4" "Married" "Rural" 11 4930.345 7.8
+"157" "M" "Primary" "Inc4" "Single" "Urban" 9 4953.8825 5.9
+"158" "M" "Primary" "Inc4" "Single" "Urban" 11 4919.25 7.1
+"159" "M" "Primary" "Inc4" "Single" "Urban" 11 5118.8375 8
+"160" "M" "Primary" "Inc4" "Single" "Urban" 10 4743.1475 6.6
+"161" "M" "Primary" "Inc4" "Single" "Urban" 9 4948.37 4.6
+"162" "M" "Primary" "Inc4" "Single" "Urban" 10 4852.2425 5.1
+"163" "M" "Primary" "Inc4" "Single" "Rural" 7 5000.6075 5.6
+"164" "M" "Primary" "Inc4" "Single" "Rural" 4 5029.64 6.2
+"165" "M" "Primary" "Inc4" "Single" "Rural" 6 4951.695 6.2
+"166" "M" "Primary" "Inc4" "Single" "Rural" 5 4960.4625 4.4
+"169" "M" "Primary" "Inc4" "Divorced" "Urban" 14 4856.18 6.9
+"171" "M" "Primary" "Inc4" "Divorced" "Urban" 14 4894.47 7.1
+"172" "M" "Primary" "Inc4" "Divorced" "Urban" 17 4830.77 6.3
+"173" "M" "Primary" "Inc4" "Divorced" "Urban" 17 4431.56 8.3
+"174" "M" "Primary" "Inc4" "Divorced" "Urban" 15 4962.58 8.1
+"175" "M" "Primary" "Inc4" "Divorced" "Rural" 14 4760.2975 6.9
+"176" "M" "Primary" "Inc4" "Divorced" "Rural" 12 4993.415 7.1
+"177" "M" "Primary" "Inc4" "Divorced" "Rural" 13 4697.0525 7.2
+"178" "M" "Primary" "Inc4" "Divorced" "Rural" 12 4740.0325 6.4
+"179" "M" "Primary" "Inc4" "Divorced" "Rural" 15 4763.71 6.2
+"181" "M" "Primary" "Inc4" "Widowed" "Urban" 20 4928.105 7.1
+"182" "M" "Primary" "Inc4" "Widowed" "Urban" 21 4603.9525 8.3
+"183" "M" "Primary" "Inc4" "Widowed" "Urban" 22 4441.5525 8.1
+"184" "M" "Primary" "Inc4" "Widowed" "Urban" 21 4357.4125 9.1
+"185" "M" "Primary" "Inc4" "Widowed" "Urban" 21 4426.7825 5.5
+"186" "M" "Primary" "Inc4" "Widowed" "Urban" 22 4608.5375 9.1
+"187" "M" "Primary" "Inc4" "Widowed" "Rural" 16 4516.75 7.1
+"188" "M" "Primary" "Inc4" "Widowed" "Rural" 17 5010.2675 6.6
+"189" "M" "Primary" "Inc4" "Widowed" "Rural" 17 4761.6275 7.5
+"190" "M" "Primary" "Inc4" "Widowed" "Rural" 18 4649.995 8
+"191" "M" "Primary" "Inc4" "Widowed" "Rural" 16 4786.8625 7.5
+"192" "M" "Primary" "Inc4" "Widowed" "Rural" 17 4723.32 9.1
+"194" "M" "HighSchool" "Inc1" "Married" "Urban" 19 4616.15 6.3
+"197" "M" "HighSchool" "Inc1" "Married" "Urban" 19 4709.425 6.6
+"199" "M" "HighSchool" "Inc1" "Married" "Rural" 15 4535.37 6.7
+"200" "M" "HighSchool" "Inc1" "Married" "Rural" 15 4568.1825 9.3
+"201" "M" "HighSchool" "Inc1" "Married" "Rural" 14 4742.9725 5.8
+"203" "M" "HighSchool" "Inc1" "Married" "Rural" 16 4628.05 6.9
+"205" "M" "HighSchool" "Inc1" "Single" "Urban" 17 4604.2675 7.8
+"206" "M" "HighSchool" "Inc1" "Single" "Urban" 16 4938.465 7.8
+"207" "M" "HighSchool" "Inc1" "Single" "Urban" 14 4816.105 8.8
+"208" "M" "HighSchool" "Inc1" "Single" "Urban" 16 4574.745 6.5
+"209" "M" "HighSchool" "Inc1" "Single" "Urban" 16 5085.29 8.2
+"210" "M" "HighSchool" "Inc1" "Single" "Urban" 17 4852.575 8.6
+"212" "M" "HighSchool" "Inc1" "Single" "Rural" 13 4644.5 6.1
+"213" "M" "HighSchool" "Inc1" "Single" "Rural" 12 5065.41 8.5
+"214" "M" "HighSchool" "Inc1" "Single" "Rural" 13 4795.875 6.7
+"215" "M" "HighSchool" "Inc1" "Single" "Rural" 13 4585.21 7.7
+"216" "M" "HighSchool" "Inc1" "Single" "Rural" 12 4776.065 5.5
+"217" "M" "HighSchool" "Inc1" "Divorced" "Urban" 22 4148.06 8.6
+"218" "M" "HighSchool" "Inc1" "Divorced" "Urban" 21 4451.265 9.4
+"220" "M" "HighSchool" "Inc1" "Divorced" "Urban" 23 4412.905 9.7
+"222" "M" "HighSchool" "Inc1" "Divorced" "Urban" 21 4490.5525 7.9
+"223" "M" "HighSchool" "Inc1" "Divorced" "Rural" 17 4640.3875 6.9
+"224" "M" "HighSchool" "Inc1" "Divorced" "Rural" 18 4564.4025 8.4
+"226" "M" "HighSchool" "Inc1" "Divorced" "Rural" 18 4707.2375 8
+"227" "M" "HighSchool" "Inc1" "Divorced" "Rural" 18 4791.3075 7.7
+"228" "M" "HighSchool" "Inc1" "Divorced" "Rural" 17 4482.905 6.7
+"229" "M" "HighSchool" "Inc1" "Widowed" "Urban" 26 4193.77 9.4
+"230" "M" "HighSchool" "Inc1" "Widowed" "Urban" 28 4099.6725 8.7
+"231" "M" "HighSchool" "Inc1" "Widowed" "Urban" 28 3904.495 9
+"232" "M" "HighSchool" "Inc1" "Widowed" "Urban" 26 4981.3225 9.2
+"233" "M" "HighSchool" "Inc1" "Widowed" "Urban" 27 4358.9525 8.4
+"234" "M" "HighSchool" "Inc1" "Widowed" "Urban" 26 4357.395 8.1
+"236" "M" "HighSchool" "Inc1" "Widowed" "Rural" 23 4319.1225 7.9
+"238" "M" "HighSchool" "Inc1" "Widowed" "Rural" 24 4259.0975 10.8
+"240" "M" "HighSchool" "Inc1" "Widowed" "Rural" 23 4364.045 7.3
+"241" "M" "HighSchool" "Inc2" "Married" "Urban" 17 4926.5475 8.6
+"242" "M" "HighSchool" "Inc2" "Married" "Urban" 17 4535.3 8
+"243" "M" "HighSchool" "Inc2" "Married" "Urban" 17 4461.7125 7.9
+"244" "M" "HighSchool" "Inc2" "Married" "Urban" 16 4889.535 7
+"245" "M" "HighSchool" "Inc2" "Married" "Urban" 17 4224.7625 6.2
+"246" "M" "HighSchool" "Inc2" "Married" "Urban" 18 4389.4375 7.8
+"247" "M" "HighSchool" "Inc2" "Married" "Rural" 13 4956.245 7.3
+"248" "M" "HighSchool" "Inc2" "Married" "Rural" 14 4861.2025 6.6
+"249" "M" "HighSchool" "Inc2" "Married" "Rural" 14 4754.085 8.1
+"251" "M" "HighSchool" "Inc2" "Married" "Rural" 14 4721.745 7.3
+"252" "M" "HighSchool" "Inc2" "Married" "Rural" 13 4892.8775 5
+"253" "M" "HighSchool" "Inc2" "Single" "Urban" 14 4547.3225 6.1
+"254" "M" "HighSchool" "Inc2" "Single" "Urban" 15 4689.2475 7.5
+"255" "M" "HighSchool" "Inc2" "Single" "Urban" 12 5074.4225 6.9
+"256" "M" "HighSchool" "Inc2" "Single" "Urban" 15 4761.505 7.9
+"257" "M" "HighSchool" "Inc2" "Single" "Urban" 15 4562.4425 6.6
+"259" "M" "HighSchool" "Inc2" "Single" "Rural" 10 4796.33 5.6
+"260" "M" "HighSchool" "Inc2" "Single" "Rural" 12 4791.1675 7.6
+"261" "M" "HighSchool" "Inc2" "Single" "Rural" 11 4932.4625 5.2
+"262" "M" "HighSchool" "Inc2" "Single" "Rural" 12 4834.5675 4.2
+"265" "M" "HighSchool" "Inc2" "Divorced" "Urban" 18 5006.68 6.6
+"266" "M" "HighSchool" "Inc2" "Divorced" "Urban" 23 4384.0125 9.5
+"267" "M" "HighSchool" "Inc2" "Divorced" "Urban" 20 4542.685 8.4
+"268" "M" "HighSchool" "Inc2" "Divorced" "Urban" 20 4570.51 8.6
+"270" "M" "HighSchool" "Inc2" "Divorced" "Urban" 20 4393.095 7.8
+"271" "M" "HighSchool" "Inc2" "Divorced" "Rural" 17 4617.8825 6.3
+"273" "M" "HighSchool" "Inc2" "Divorced" "Rural" 16 4615.275 6.9
+"274" "M" "HighSchool" "Inc2" "Divorced" "Rural" 17 4522.63 8.4
+"276" "M" "HighSchool" "Inc2" "Divorced" "Rural" 19 4419.4675 8.3
+"277" "M" "HighSchool" "Inc2" "Widowed" "Urban" 27 4471.635 8.4
+"278" "M" "HighSchool" "Inc2" "Widowed" "Urban" 25 4487.1225 9.2
+"279" "M" "HighSchool" "Inc2" "Widowed" "Urban" 23 4301.255 8.4
+"280" "M" "HighSchool" "Inc2" "Widowed" "Urban" 26 4302.515 10.5
+"281" "M" "HighSchool" "Inc2" "Widowed" "Urban" 25 4388.405 8.9
+"282" "M" "HighSchool" "Inc2" "Widowed" "Urban" 27 4356.8875 10.8
+"283" "M" "HighSchool" "Inc2" "Widowed" "Rural" 22 4680.7425 8.9
+"284" "M" "HighSchool" "Inc2" "Widowed" "Rural" 23 4664.6075 10.4
+"285" "M" "HighSchool" "Inc2" "Widowed" "Rural" 23 4645.7075 10.8
+"286" "M" "HighSchool" "Inc2" "Widowed" "Rural" 22 4603.4275 9.3
+"287" "M" "HighSchool" "Inc2" "Widowed" "Rural" 22 4393.165 8.6
+"288" "M" "HighSchool" "Inc2" "Widowed" "Rural" 23 4667.46 10.5
+"289" "M" "HighSchool" "Inc3" "Married" "Urban" 18 4583.0575 6.1
+"290" "M" "HighSchool" "Inc3" "Married" "Urban" 17 4692.1875 7
+"291" "M" "HighSchool" "Inc3" "Married" "Urban" 16 4498.4275 6.2
+"292" "M" "HighSchool" "Inc3" "Married" "Urban" 16 4637.955 9.1
+"293" "M" "HighSchool" "Inc3" "Married" "Urban" 18 4553.2375 9.4
+"294" "M" "HighSchool" "Inc3" "Married" "Urban" 18 4254.4425 9.2
+"295" "M" "HighSchool" "Inc3" "Married" "Rural" 13 4802.8225 8.1
+"297" "M" "HighSchool" "Inc3" "Married" "Rural" 14 4940.775 6.6
+"300" "M" "HighSchool" "Inc3" "Married" "Rural" 16 4599.5775 8.9
+"302" "M" "HighSchool" "Inc3" "Single" "Urban" 15 4792.06 8.1
+"303" "M" "HighSchool" "Inc3" "Single" "Urban" 15 4758.6525 7.6
+"304" "M" "HighSchool" "Inc3" "Single" "Urban" 13 4741.3975 4.9
+"305" "M" "HighSchool" "Inc3" "Single" "Urban" 13 4649.8025 6.5
+"306" "M" "HighSchool" "Inc3" "Single" "Urban" 14 4660.9325 7.7
+"307" "M" "HighSchool" "Inc3" "Single" "Rural" 10 4937.275 7.5
+"308" "M" "HighSchool" "Inc3" "Single" "Rural" 11 4763.99 6.5
+"309" "M" "HighSchool" "Inc3" "Single" "Rural" 12 4712.715 6.2
+"310" "M" "HighSchool" "Inc3" "Single" "Rural" 11 4506.7575 7.2
+"311" "M" "HighSchool" "Inc3" "Single" "Rural" 7 4775.715 4.1
+"312" "M" "HighSchool" "Inc3" "Single" "Rural" 10 5059.39 6.2
+"313" "M" "HighSchool" "Inc3" "Divorced" "Urban" 21 4536.9625 7.3
+"314" "M" "HighSchool" "Inc3" "Divorced" "Urban" 21 4593.5575 8.7
+"315" "M" "HighSchool" "Inc3" "Divorced" "Urban" 19 4882.01 9.7
+"316" "M" "HighSchool" "Inc3" "Divorced" "Urban" 20 4791.36 8.9
+"318" "M" "HighSchool" "Inc3" "Divorced" "Urban" 22 4581.4825 8.8
+"319" "M" "HighSchool" "Inc3" "Divorced" "Rural" 15 4607.855 9.5
+"320" "M" "HighSchool" "Inc3" "Divorced" "Rural" 18 4545.1525 4.8
+"321" "M" "HighSchool" "Inc3" "Divorced" "Rural" 17 4596.97 9.2
+"324" "M" "HighSchool" "Inc3" "Divorced" "Rural" 16 4913.3525 7.1
+"325" "M" "HighSchool" "Inc3" "Widowed" "Urban" 26 4478.075 8.9
+"326" "M" "HighSchool" "Inc3" "Widowed" "Urban" 24 4373.53 10
+"327" "M" "HighSchool" "Inc3" "Widowed" "Urban" 27 4165.07 8.1
+"328" "M" "HighSchool" "Inc3" "Widowed" "Urban" 24 4473.56 8.9
+"329" "M" "HighSchool" "Inc3" "Widowed" "Urban" 27 4184.285 9.2
+"330" "M" "HighSchool" "Inc3" "Widowed" "Urban" 26 4557.595 9.7
+"331" "M" "HighSchool" "Inc3" "Widowed" "Rural" 21 4794.8075 7.1
+"332" "M" "HighSchool" "Inc3" "Widowed" "Rural" 23 4765.18 10.1
+"333" "M" "HighSchool" "Inc3" "Widowed" "Rural" 20 4532.08 8.4
+"336" "M" "HighSchool" "Inc3" "Widowed" "Rural" 21 4503.31 7.6
+"338" "M" "HighSchool" "Inc4" "Married" "Urban" 13 4872.5775 5.7
+"339" "M" "HighSchool" "Inc4" "Married" "Urban" 14 4978.33 6.1
+"340" "M" "HighSchool" "Inc4" "Married" "Urban" 13 4902.415 6.8
+"341" "M" "HighSchool" "Inc4" "Married" "Urban" 13 4808.4225 6.5
+"342" "M" "HighSchool" "Inc4" "Married" "Urban" 14 4685.065 6.6
+"343" "M" "HighSchool" "Inc4" "Married" "Rural" 10 4949.525 6.2
+"345" "M" "HighSchool" "Inc4" "Married" "Rural" 11 4641.4725 6.2
+"346" "M" "HighSchool" "Inc4" "Married" "Rural" 10 4993.1525 5.5
+"347" "M" "HighSchool" "Inc4" "Married" "Rural" 9 4981.8475 5.9
+"348" "M" "HighSchool" "Inc4" "Married" "Rural" 9 5229.4375 4.2
+"350" "M" "HighSchool" "Inc4" "Single" "Urban" 9 4807.635 4.9
+"351" "M" "HighSchool" "Inc4" "Single" "Urban" 10 5016.34 5.2
+"352" "M" "HighSchool" "Inc4" "Single" "Urban" 10 4774.4025 6.4
+"354" "M" "HighSchool" "Inc4" "Single" "Urban" 9 5115.215 5.3
+"355" "M" "HighSchool" "Inc4" "Single" "Rural" 5 5262.4075 5.8
+"356" "M" "HighSchool" "Inc4" "Single" "Rural" 7 4948.02 4.2
+"357" "M" "HighSchool" "Inc4" "Single" "Rural" 8 4724.93 6.6
+"358" "M" "HighSchool" "Inc4" "Single" "Rural" 8 4804.5725 4.4
+"359" "M" "HighSchool" "Inc4" "Single" "Rural" 5 5212.9175 4.3
+"360" "M" "HighSchool" "Inc4" "Single" "Rural" 7 5246.115 5.1
+"361" "M" "HighSchool" "Inc4" "Divorced" "Urban" 14 4842.8275 7.9
+"362" "M" "HighSchool" "Inc4" "Divorced" "Urban" 17 4397.715 7
+"363" "M" "HighSchool" "Inc4" "Divorced" "Urban" 15 4881.24 7.5
+"364" "M" "HighSchool" "Inc4" "Divorced" "Urban" 18 4653.425 7.9
+"365" "M" "HighSchool" "Inc4" "Divorced" "Urban" 14 5311.6175 6.3
+"366" "M" "HighSchool" "Inc4" "Divorced" "Urban" 16 4853.7825 7.2
+"367" "M" "HighSchool" "Inc4" "Divorced" "Rural" 15 4990.1425 6.5
+"368" "M" "HighSchool" "Inc4" "Divorced" "Rural" 12 4883.55 6.1
+"369" "M" "HighSchool" "Inc4" "Divorced" "Rural" 13 4738.09 5.5
+"370" "M" "HighSchool" "Inc4" "Divorced" "Rural" 14 4378.71 8.9
+"371" "M" "HighSchool" "Inc4" "Divorced" "Rural" 13 4980.0625 6.1
+"372" "M" "HighSchool" "Inc4" "Divorced" "Rural" 13 4939.375 5.6
+"373" "M" "HighSchool" "Inc4" "Widowed" "Urban" 22 4884.8975 7.8
+"374" "M" "HighSchool" "Inc4" "Widowed" "Urban" 22 4373.0225 7.9
+"375" "M" "HighSchool" "Inc4" "Widowed" "Urban" 24 4672.2725 8.2
+"376" "M" "HighSchool" "Inc4" "Widowed" "Urban" 21 4380.915 8.1
+"377" "M" "HighSchool" "Inc4" "Widowed" "Urban" 22 4904.6025 9.3
+"378" "M" "HighSchool" "Inc4" "Widowed" "Urban" 22 4225.5325 8.6
+"379" "M" "HighSchool" "Inc4" "Widowed" "Rural" 17 4430.7725 9
+"380" "M" "HighSchool" "Inc4" "Widowed" "Rural" 15 5029.4825 6.7
+"381" "M" "HighSchool" "Inc4" "Widowed" "Rural" 18 4706.4675 8
+"382" "M" "HighSchool" "Inc4" "Widowed" "Rural" 19 4330.2 6.9
+"383" "M" "HighSchool" "Inc4" "Widowed" "Rural" 17 4470.8825 6.5
+"384" "M" "HighSchool" "Inc4" "Widowed" "Rural" 19 4422.6 9.3
+"385" "M" "College or Higher" "Inc1" "Married" "Urban" 20 4363.2925 6.6
+"386" "M" "College or Higher" "Inc1" "Married" "Urban" 20 4816.1925 8.6
+"387" "M" "College or Higher" "Inc1" "Married" "Urban" 19 4557.7875 7.6
+"388" "M" "College or Higher" "Inc1" "Married" "Urban" 20 4782.89 7.4
+"389" "M" "College or Higher" "Inc1" "Married" "Urban" 18 4890.1825 8.2
+"390" "M" "College or Higher" "Inc1" "Married" "Urban" 19 4380.53 9.3
+"392" "M" "College or Higher" "Inc1" "Married" "Rural" 16 4597.9675 8.1
+"393" "M" "College or Higher" "Inc1" "Married" "Rural" 14 4580.975 7
+"394" "M" "College or Higher" "Inc1" "Married" "Rural" 16 4766.0025 7.4
+"395" "M" "College or Higher" "Inc1" "Married" "Rural" 17 4384.17 7.8
+"396" "M" "College or Higher" "Inc1" "Married" "Rural" 15 4902.6775 7.2
+"397" "M" "College or Higher" "Inc1" "Single" "Urban" 16 4865.6125 7.4
+"398" "M" "College or Higher" "Inc1" "Single" "Urban" 17 4807.3375 7.1
+"399" "M" "College or Higher" "Inc1" "Single" "Urban" 16 4494.0875 7.8
+"400" "M" "College or Higher" "Inc1" "Single" "Urban" 16 4529.8575 7.7
+"401" "M" "College or Higher" "Inc1" "Single" "Urban" 16 4702.4775 7.3
+"402" "M" "College or Higher" "Inc1" "Single" "Urban" 16 4883.5675 8.2
+"403" "M" "College or Higher" "Inc1" "Single" "Rural" 14 4920.965 8.7
+"404" "M" "College or Higher" "Inc1" "Single" "Rural" 13 4807.3725 6.9
+"406" "M" "College or Higher" "Inc1" "Single" "Rural" 12 4861.9375 5.7
+"407" "M" "College or Higher" "Inc1" "Single" "Rural" 13 4639.39 5.8
+"408" "M" "College or Higher" "Inc1" "Single" "Rural" 14 5098.8875 9.1
+"409" "M" "College or Higher" "Inc1" "Divorced" "Urban" 23 4453.715 6.7
+"410" "M" "College or Higher" "Inc1" "Divorced" "Urban" 21 4650.905 8
+"411" "M" "College or Higher" "Inc1" "Divorced" "Urban" 23 4419.94 9.9
+"412" "M" "College or Higher" "Inc1" "Divorced" "Urban" 21 4265.1 8.1
+"414" "M" "College or Higher" "Inc1" "Divorced" "Urban" 23 4517.4325 7.7
+"415" "M" "College or Higher" "Inc1" "Divorced" "Rural" 18 4706.7125 8.1
+"416" "M" "College or Higher" "Inc1" "Divorced" "Rural" 18 4625.8975 6.9
+"417" "M" "College or Higher" "Inc1" "Divorced" "Rural" 19 4259.4475 7.3
+"418" "M" "College or Higher" "Inc1" "Divorced" "Rural" 20 4563.4575 7
+"419" "M" "College or Higher" "Inc1" "Divorced" "Rural" 20 4523.855 7.3
+"420" "M" "College or Higher" "Inc1" "Divorced" "Rural" 19 4836.7025 8
+"421" "M" "College or Higher" "Inc1" "Widowed" "Urban" 26 4733.9425 9.1
+"422" "M" "College or Higher" "Inc1" "Widowed" "Urban" 26 4187.4175 8.8
+"423" "M" "College or Higher" "Inc1" "Widowed" "Urban" 27 4392.5875 9.8
+"424" "M" "College or Higher" "Inc1" "Widowed" "Urban" 28 4325.2125 8.7
+"425" "M" "College or Higher" "Inc1" "Widowed" "Urban" 28 4293.8175 11.3
+"426" "M" "College or Higher" "Inc1" "Widowed" "Urban" 28 4319.56 7.8
+"427" "M" "College or Higher" "Inc1" "Widowed" "Rural" 24 4443.495 9.1
+"428" "M" "College or Higher" "Inc1" "Widowed" "Rural" 25 4551.0325 8.1
+"429" "M" "College or Higher" "Inc1" "Widowed" "Rural" 24 4551.19 7.4
+"430" "M" "College or Higher" "Inc1" "Widowed" "Rural" 23 4402.0025 9.6
+"431" "M" "College or Higher" "Inc1" "Widowed" "Rural" 22 4357.78 9.1
+"432" "M" "College or Higher" "Inc1" "Widowed" "Rural" 23 4442.13 8.7
+"433" "M" "College or Higher" "Inc2" "Married" "Urban" 18 4632.285 8
+"434" "M" "College or Higher" "Inc2" "Married" "Urban" 17 4553.99 7.8
+"435" "M" "College or Higher" "Inc2" "Married" "Urban" 18 4629.0125 5.8
+"436" "M" "College or Higher" "Inc2" "Married" "Urban" 17 4458.755 6.4
+"437" "M" "College or Higher" "Inc2" "Married" "Urban" 18 4558.855 7
+"439" "M" "College or Higher" "Inc2" "Married" "Rural" 16 4727.6425 7.8
+"441" "M" "College or Higher" "Inc2" "Married" "Rural" 14 4921.49 7.3
+"442" "M" "College or Higher" "Inc2" "Married" "Rural" 16 5102.6675 7.1
+"443" "M" "College or Higher" "Inc2" "Married" "Rural" 13 5094.8625 7.8
+"445" "M" "College or Higher" "Inc2" "Single" "Urban" 14 4772.0575 6.5
+"446" "M" "College or Higher" "Inc2" "Single" "Urban" 15 4960.27 8.5
+"450" "M" "College or Higher" "Inc2" "Single" "Urban" 14 4613.2975 6.9
+"452" "M" "College or Higher" "Inc2" "Single" "Rural" 12 5080.53 6.5
+"455" "M" "College or Higher" "Inc2" "Single" "Rural" 11 4735.15 7.1
+"456" "M" "College or Higher" "Inc2" "Single" "Rural" 12 4999.2425 4.3
+"457" "M" "College or Higher" "Inc2" "Divorced" "Urban" 21 4524.03 10.4
+"458" "M" "College or Higher" "Inc2" "Divorced" "Urban" 20 4743.585 9.9
+"459" "M" "College or Higher" "Inc2" "Divorced" "Urban" 22 4336.2375 7.4
+"460" "M" "College or Higher" "Inc2" "Divorced" "Urban" 20 4241.72 7.1
+"462" "M" "College or Higher" "Inc2" "Divorced" "Urban" 21 4298.5775 8
+"463" "M" "College or Higher" "Inc2" "Divorced" "Rural" 17 4408.5125 7.3
+"464" "M" "College or Higher" "Inc2" "Divorced" "Rural" 17 4406.675 5.4
+"466" "M" "College or Higher" "Inc2" "Divorced" "Rural" 19 4407.3225 8.2
+"467" "M" "College or Higher" "Inc2" "Divorced" "Rural" 17 4311.615 7.6
+"468" "M" "College or Higher" "Inc2" "Divorced" "Rural" 16 5039.8425 6.6
+"469" "M" "College or Higher" "Inc2" "Widowed" "Urban" 24 4569.775 8.8
+"470" "M" "College or Higher" "Inc2" "Widowed" "Urban" 26 4363.4675 8.5
+"471" "M" "College or Higher" "Inc2" "Widowed" "Urban" 26 4495.785 9.1
+"472" "M" "College or Higher" "Inc2" "Widowed" "Urban" 24 4378.185 8.6
+"473" "M" "College or Higher" "Inc2" "Widowed" "Urban" 26 4428.5675 9.4
+"474" "M" "College or Higher" "Inc2" "Widowed" "Urban" 26 4394.4075 9.2
+"475" "M" "College or Higher" "Inc2" "Widowed" "Rural" 22 4374.65 7.5
+"476" "M" "College or Higher" "Inc2" "Widowed" "Rural" 25 4323.69 8.2
+"477" "M" "College or Higher" "Inc2" "Widowed" "Rural" 22 4700.255 8.1
+"479" "M" "College or Higher" "Inc2" "Widowed" "Rural" 23 4268.53 7.4
+"480" "M" "College or Higher" "Inc2" "Widowed" "Rural" 22 4525.6225 8.3
+"481" "M" "College or Higher" "Inc3" "Married" "Urban" 17 4630.8675 7.4
+"483" "M" "College or Higher" "Inc3" "Married" "Urban" 17 4588.4825 7.9
+"484" "M" "College or Higher" "Inc3" "Married" "Urban" 17 4916.0125 7.6
+"485" "M" "College or Higher" "Inc3" "Married" "Urban" 17 4481.61 7.1
+"486" "M" "College or Higher" "Inc3" "Married" "Urban" 16 4893.6825 5.6
+"487" "M" "College or Higher" "Inc3" "Married" "Rural" 16 4884.9325 5.5
+"488" "M" "College or Higher" "Inc3" "Married" "Rural" 15 4739.0525 7.9
+"489" "M" "College or Higher" "Inc3" "Married" "Rural" 14 4936.7675 5.1
+"490" "M" "College or Higher" "Inc3" "Married" "Rural" 17 4778.235 8
+"491" "M" "College or Higher" "Inc3" "Married" "Rural" 15 4785.13 6
+"492" "M" "College or Higher" "Inc3" "Married" "Rural" 14 4658.115 6.6
+"495" "M" "College or Higher" "Inc3" "Single" "Urban" 16 4801.23 6.1
+"496" "M" "College or Higher" "Inc3" "Single" "Urban" 15 4882.92 8.4
+"498" "M" "College or Higher" "Inc3" "Single" "Urban" 15 5062.3825 7.1
+"499" "M" "College or Higher" "Inc3" "Single" "Rural" 12 4607.925 6.2
+"500" "M" "College or Higher" "Inc3" "Single" "Rural" 11 5005.07 4.7
+"501" "M" "College or Higher" "Inc3" "Single" "Rural" 11 4926.6175 6.9
+"502" "M" "College or Higher" "Inc3" "Single" "Rural" 13 4693.6925 6.5
+"503" "M" "College or Higher" "Inc3" "Single" "Rural" 12 4799.2 8.4
+"506" "M" "College or Higher" "Inc3" "Divorced" "Urban" 23 4322.8675 9.8
+"507" "M" "College or Higher" "Inc3" "Divorced" "Urban" 21 4545.625 8.4
+"508" "M" "College or Higher" "Inc3" "Divorced" "Urban" 21 4670.7675 8.2
+"509" "M" "College or Higher" "Inc3" "Divorced" "Urban" 20 4137.49 8.7
+"510" "M" "College or Higher" "Inc3" "Divorced" "Urban" 21 4328.66 8
+"511" "M" "College or Higher" "Inc3" "Divorced" "Rural" 20 4291.7525 8.1
+"512" "M" "College or Higher" "Inc3" "Divorced" "Rural" 18 4468.94 7.6
+"514" "M" "College or Higher" "Inc3" "Divorced" "Rural" 18 4889.2375 6.9
+"515" "M" "College or Higher" "Inc3" "Divorced" "Rural" 18 4506.285 7.7
+"516" "M" "College or Higher" "Inc3" "Divorced" "Rural" 18 4404.225 9.4
+"517" "M" "College or Higher" "Inc3" "Widowed" "Urban" 25 4488.61 9.7
+"518" "M" "College or Higher" "Inc3" "Widowed" "Urban" 26 4279.31 9.4
+"519" "M" "College or Higher" "Inc3" "Widowed" "Urban" 27 4002.355 8.5
+"520" "M" "College or Higher" "Inc3" "Widowed" "Urban" 25 4296.8275 8.5
+"521" "M" "College or Higher" "Inc3" "Widowed" "Urban" 26 4033.61 9.9
+"522" "M" "College or Higher" "Inc3" "Widowed" "Urban" 24 4396.9275 9.1
+"524" "M" "College or Higher" "Inc3" "Widowed" "Rural" 24 4840.605 8.4
+"525" "M" "College or Higher" "Inc3" "Widowed" "Rural" 24 4175.4125 9.5
+"526" "M" "College or Higher" "Inc3" "Widowed" "Rural" 22 4410.525 7.9
+"528" "M" "College or Higher" "Inc3" "Widowed" "Rural" 22 4470.62 8.9
+"529" "M" "College or Higher" "Inc4" "Married" "Urban" 12 4846.8175 6
+"531" "M" "College or Higher" "Inc4" "Married" "Urban" 15 4639.39 5.9
+"532" "M" "College or Higher" "Inc4" "Married" "Urban" 14 4585.49 8
+"533" "M" "College or Higher" "Inc4" "Married" "Urban" 13 4979.345 7
+"534" "M" "College or Higher" "Inc4" "Married" "Urban" 12 4995.4625 7
+"536" "M" "College or Higher" "Inc4" "Married" "Rural" 11 4883.4625 7
+"537" "M" "College or Higher" "Inc4" "Married" "Rural" 10 5065.2875 5.7
+"538" "M" "College or Higher" "Inc4" "Married" "Rural" 10 4750.585 4.3
+"539" "M" "College or Higher" "Inc4" "Married" "Rural" 12 4910.43 6.3
+"540" "M" "College or Higher" "Inc4" "Married" "Rural" 9 4942.63 4.7
+"542" "M" "College or Higher" "Inc4" "Single" "Urban" 10 4888.0475 7.3
+"543" "M" "College or Higher" "Inc4" "Single" "Urban" 11 4807.4775 6.3
+"544" "M" "College or Higher" "Inc4" "Single" "Urban" 11 5111.8725 7.2
+"545" "M" "College or Higher" "Inc4" "Single" "Urban" 11 4689.5625 6.2
+"546" "M" "College or Higher" "Inc4" "Single" "Urban" 11 4711.945 7.3
+"547" "M" "College or Higher" "Inc4" "Single" "Rural" 9 4672.5525 6.2
+"548" "M" "College or Higher" "Inc4" "Single" "Rural" 7 4817.54 6.2
+"551" "M" "College or Higher" "Inc4" "Single" "Rural" 8 4979.17 3.9
+"552" "M" "College or Higher" "Inc4" "Single" "Rural" 6 5499.2875 5.3
+"553" "M" "College or Higher" "Inc4" "Divorced" "Urban" 17 4847.3075 9.9
+"554" "M" "College or Higher" "Inc4" "Divorced" "Urban" 17 4618.67 6.6
+"555" "M" "College or Higher" "Inc4" "Divorced" "Urban" 18 4639.0575 7
+"556" "M" "College or Higher" "Inc4" "Divorced" "Urban" 17 4746.105 8.6
+"557" "M" "College or Higher" "Inc4" "Divorced" "Urban" 16 4600.7675 7.1
+"559" "M" "College or Higher" "Inc4" "Divorced" "Rural" 15 4676.5425 7.3
+"560" "M" "College or Higher" "Inc4" "Divorced" "Rural" 14 4488.5225 6.4
+"561" "M" "College or Higher" "Inc4" "Divorced" "Rural" 14 4800.1975 5.5
+"563" "M" "College or Higher" "Inc4" "Divorced" "Rural" 13 4998.735 5.6
+"564" "M" "College or Higher" "Inc4" "Divorced" "Rural" 13 4791.5875 6.5
+"565" "M" "College or Higher" "Inc4" "Widowed" "Urban" 22 4507.8425 9
+"566" "M" "College or Higher" "Inc4" "Widowed" "Urban" 22 4796.3825 9.1
+"567" "M" "College or Higher" "Inc4" "Widowed" "Urban" 22 4328.065 7.8
+"568" "M" "College or Higher" "Inc4" "Widowed" "Urban" 20 4609.4825 7.6
+"569" "M" "College or Higher" "Inc4" "Widowed" "Urban" 24 4375.98 7.5
+"570" "M" "College or Higher" "Inc4" "Widowed" "Urban" 23 4383.2775 7.4
+"571" "M" "College or Higher" "Inc4" "Widowed" "Rural" 19 4544.6275 7.7
+"573" "M" "College or Higher" "Inc4" "Widowed" "Rural" 19 4518.5 8.2
+"574" "M" "College or Higher" "Inc4" "Widowed" "Rural" 19 4661.09 9.3
+"575" "M" "College or Higher" "Inc4" "Widowed" "Rural" 20 4509.4875 8
+"576" "M" "College or Higher" "Inc4" "Widowed" "Rural" 18 4655.6475 7.2
+"577" "F" "Primary" "Inc1" "Married" "Urban" 25 4432.8025 9.9
+"578" "F" "Primary" "Inc1" "Married" "Urban" 23 4358.48 9.1
+"579" "F" "Primary" "Inc1" "Married" "Urban" 24 4060.8225 9.1
+"580" "F" "Primary" "Inc1" "Married" "Urban" 25 4319.1225 9.6
+"581" "F" "Primary" "Inc1" "Married" "Urban" 25 4057.025 8.9
+"582" "F" "Primary" "Inc1" "Married" "Urban" 24 4450.6525 8.7
+"583" "F" "Primary" "Inc1" "Married" "Rural" 21 4670.0675 7.6
+"584" "F" "Primary" "Inc1" "Married" "Rural" 20 4505.3925 9.6
+"585" "F" "Primary" "Inc1" "Married" "Rural" 21 4711.1225 7.7
+"586" "F" "Primary" "Inc1" "Married" "Rural" 21 4645.4975 7.9
+"587" "F" "Primary" "Inc1" "Married" "Rural" 20 4570.1075 8.8
+"588" "F" "Primary" "Inc1" "Married" "Rural" 20 4330.27 8.2
+"589" "F" "Primary" "Inc1" "Single" "Urban" 19 4940.7925 6.3
+"591" "F" "Primary" "Inc1" "Single" "Urban" 21 4705.0325 6.3
+"592" "F" "Primary" "Inc1" "Single" "Urban" 20 4523.75 6.8
+"593" "F" "Primary" "Inc1" "Single" "Urban" 20 4458.4225 7.6
+"594" "F" "Primary" "Inc1" "Single" "Urban" 19 4535.3 7
+"595" "F" "Primary" "Inc1" "Single" "Rural" 17 4390.5925 7
+"596" "F" "Primary" "Inc1" "Single" "Rural" 16 4429.6525 5.8
+"598" "F" "Primary" "Inc1" "Single" "Rural" 17 4572.96 6.8
+"599" "F" "Primary" "Inc1" "Single" "Rural" 20 4369.5925 9.2
+"600" "F" "Primary" "Inc1" "Single" "Rural" 18 4177.495 4.9
+"601" "F" "Primary" "Inc1" "Divorced" "Urban" 27 4127.06 10.6
+"603" "F" "Primary" "Inc1" "Divorced" "Urban" 28 4005.8375 8.2
+"604" "F" "Primary" "Inc1" "Divorced" "Urban" 26 4590.7925 9.9
+"607" "F" "Primary" "Inc1" "Divorced" "Rural" 24 4409.0725 10.3
+"609" "F" "Primary" "Inc1" "Divorced" "Rural" 24 4343.43 7.6
+"610" "F" "Primary" "Inc1" "Divorced" "Rural" 24 4385.045 8.9
+"611" "F" "Primary" "Inc1" "Divorced" "Rural" 24 4338.39 9.7
+"612" "F" "Primary" "Inc1" "Divorced" "Rural" 24 4220.02 8.6
+"613" "F" "Primary" "Inc1" "Widowed" "Urban" 32 4202.9925 9.7
+"614" "F" "Primary" "Inc1" "Widowed" "Urban" 33 4233.8275 12
+"615" "F" "Primary" "Inc1" "Widowed" "Urban" 30 3862.775 8.9
+"616" "F" "Primary" "Inc1" "Widowed" "Urban" 32 4027.5025 13.7
+"617" "F" "Primary" "Inc1" "Widowed" "Urban" 32 4322.3775 11.6
+"619" "F" "Primary" "Inc1" "Widowed" "Rural" 29 4097.135 10
+"621" "F" "Primary" "Inc1" "Widowed" "Rural" 28 4380.53 9.3
+"623" "F" "Primary" "Inc1" "Widowed" "Rural" 30 4257.9075 10.6
+"624" "F" "Primary" "Inc1" "Widowed" "Rural" 28 4011.77 8.6
+"625" "F" "Primary" "Inc2" "Married" "Urban" 22 4354.14 7.1
+"627" "F" "Primary" "Inc2" "Married" "Urban" 21 4375.6125 6.7
+"628" "F" "Primary" "Inc2" "Married" "Urban" 21 5014.73 7.5
+"629" "F" "Primary" "Inc2" "Married" "Urban" 19 4815.9475 8.2
+"630" "F" "Primary" "Inc2" "Married" "Urban" 22 4322.885 9.6
+"631" "F" "Primary" "Inc2" "Married" "Rural" 18 4512.9875 8
+"632" "F" "Primary" "Inc2" "Married" "Rural" 17 4794.8775 9.1
+"634" "F" "Primary" "Inc2" "Married" "Rural" 16 4801.8425 8.9
+"635" "F" "Primary" "Inc2" "Married" "Rural" 19 4294.99 6.5
+"636" "F" "Primary" "Inc2" "Married" "Rural" 19 4147.15 8.2
+"637" "F" "Primary" "Inc2" "Single" "Urban" 18 4781.6125 8.7
+"638" "F" "Primary" "Inc2" "Single" "Urban" 19 4414.6375 6.7
+"640" "F" "Primary" "Inc2" "Single" "Urban" 19 4749.2025 7.1
+"641" "F" "Primary" "Inc2" "Single" "Urban" 18 4552.52 10.1
+"642" "F" "Primary" "Inc2" "Single" "Urban" 19 4835.495 7.1
+"643" "F" "Primary" "Inc2" "Single" "Rural" 15 4614.0325 6.4
+"644" "F" "Primary" "Inc2" "Single" "Rural" 14 4608.1875 7.5
+"646" "F" "Primary" "Inc2" "Single" "Rural" 15 4749.7275 7.5
+"647" "F" "Primary" "Inc2" "Single" "Rural" 17 4817.1025 7.2
+"648" "F" "Primary" "Inc2" "Single" "Rural" 16 4885.4925 9.4
+"649" "F" "Primary" "Inc2" "Divorced" "Urban" 26 4271.855 9.4
+"651" "F" "Primary" "Inc2" "Divorced" "Urban" 24 4626.0025 9
+"652" "F" "Primary" "Inc2" "Divorced" "Urban" 24 4399.3075 8.9
+"655" "F" "Primary" "Inc2" "Divorced" "Rural" 22 4496.625 7.4
+"657" "F" "Primary" "Inc2" "Divorced" "Rural" 22 4527.39 7.9
+"658" "F" "Primary" "Inc2" "Divorced" "Rural" 19 4286.695 7.3
+"659" "F" "Primary" "Inc2" "Divorced" "Rural" 21 4542.79 9.2
+"660" "F" "Primary" "Inc2" "Divorced" "Rural" 22 4286.695 7
+"661" "F" "Primary" "Inc2" "Widowed" "Urban" 30 4045.1425 11.7
+"662" "F" "Primary" "Inc2" "Widowed" "Urban" 30 4252.885 10.5
+"663" "F" "Primary" "Inc2" "Widowed" "Urban" 30 4283.4225 10
+"666" "F" "Primary" "Inc2" "Widowed" "Urban" 29 4259.045 6.8
+"667" "F" "Primary" "Inc2" "Widowed" "Rural" 26 4461.555 10.6
+"668" "F" "Primary" "Inc2" "Widowed" "Rural" 26 4229.2075 9
+"671" "F" "Primary" "Inc2" "Widowed" "Rural" 24 4697.3325 9.2
+"672" "F" "Primary" "Inc2" "Widowed" "Rural" 26 4382.8225 11.4
+"673" "F" "Primary" "Inc3" "Married" "Urban" 21 4505.7075 7.5
+"674" "F" "Primary" "Inc3" "Married" "Urban" 21 4359.95 10
+"676" "F" "Primary" "Inc3" "Married" "Urban" 20 4438.2275 9.8
+"677" "F" "Primary" "Inc3" "Married" "Urban" 19 4209.8 8.5
+"678" "F" "Primary" "Inc3" "Married" "Urban" 21 4322.0975 8.8
+"679" "F" "Primary" "Inc3" "Married" "Rural" 17 4421.2 6.1
+"681" "F" "Primary" "Inc3" "Married" "Rural" 18 4560.22 7.8
+"682" "F" "Primary" "Inc3" "Married" "Rural" 18 4666.4625 8.5
+"683" "F" "Primary" "Inc3" "Married" "Rural" 19 4784.535 6.2
+"685" "F" "Primary" "Inc3" "Single" "Urban" 18 4410.28 8.3
+"686" "F" "Primary" "Inc3" "Single" "Urban" 19 4399.955 7.2
+"687" "F" "Primary" "Inc3" "Single" "Urban" 19 4567.3075 7.7
+"688" "F" "Primary" "Inc3" "Single" "Urban" 19 4684.925 8.6
+"690" "F" "Primary" "Inc3" "Single" "Urban" 18 4851.49 7.2
+"691" "F" "Primary" "Inc3" "Single" "Rural" 14 5068.49 5.2
+"692" "F" "Primary" "Inc3" "Single" "Rural" 14 4657.31 8.1
+"693" "F" "Primary" "Inc3" "Single" "Rural" 13 4772.8975 6.7
+"694" "F" "Primary" "Inc3" "Single" "Rural" 15 4538.52 6.1
+"695" "F" "Primary" "Inc3" "Single" "Rural" 15 4534.9675 8.4
+"696" "F" "Primary" "Inc3" "Single" "Rural" 15 4549.8075 7.6
+"697" "F" "Primary" "Inc3" "Divorced" "Urban" 24 4469.465 7.7
+"698" "F" "Primary" "Inc3" "Divorced" "Urban" 25 4345.8275 9.5
+"699" "F" "Primary" "Inc3" "Divorced" "Urban" 25 4448.99 9.2
+"700" "F" "Primary" "Inc3" "Divorced" "Urban" 23 4393.1475 8.4
+"701" "F" "Primary" "Inc3" "Divorced" "Urban" 24 4673.97 8.4
+"702" "F" "Primary" "Inc3" "Divorced" "Urban" 27 4469.85 8.9
+"703" "F" "Primary" "Inc3" "Divorced" "Rural" 20 4859.855 5.7
+"704" "F" "Primary" "Inc3" "Divorced" "Rural" 20 4651.6225 7.6
+"705" "F" "Primary" "Inc3" "Divorced" "Rural" 21 4780.5625 8.2
+"706" "F" "Primary" "Inc3" "Divorced" "Rural" 21 4324.4075 8.4
+"707" "F" "Primary" "Inc3" "Divorced" "Rural" 20 4492.8625 6.8
+"709" "F" "Primary" "Inc3" "Widowed" "Urban" 29 4457.6175 10.3
+"710" "F" "Primary" "Inc3" "Widowed" "Urban" 29 4042.5175 11.9
+"711" "F" "Primary" "Inc3" "Widowed" "Urban" 30 4121.7225 10
+"712" "F" "Primary" "Inc3" "Widowed" "Urban" 29 4451.405 10
+"713" "F" "Primary" "Inc3" "Widowed" "Urban" 29 4222.96 9.8
+"714" "F" "Primary" "Inc3" "Widowed" "Urban" 29 4429.18 10.5
+"715" "F" "Primary" "Inc3" "Widowed" "Rural" 28 4300.8875 9.1
+"716" "F" "Primary" "Inc3" "Widowed" "Rural" 25 4141.375 8.1
+"717" "F" "Primary" "Inc3" "Widowed" "Rural" 25 4251.6775 10.4
+"718" "F" "Primary" "Inc3" "Widowed" "Rural" 26 4439.1725 9.2
+"719" "F" "Primary" "Inc3" "Widowed" "Rural" 25 4347.245 8
+"720" "F" "Primary" "Inc3" "Widowed" "Rural" 25 4203.7275 8.9
+"721" "F" "Primary" "Inc4" "Married" "Urban" 13 4593.085 7.2
+"722" "F" "Primary" "Inc4" "Married" "Urban" 12 4614.05 5.9
+"723" "F" "Primary" "Inc4" "Married" "Urban" 13 4672.465 8.4
+"725" "F" "Primary" "Inc4" "Married" "Urban" 13 4650.0475 5.9
+"726" "F" "Primary" "Inc4" "Married" "Urban" 14 4668.72 8.6
+"728" "F" "Primary" "Inc4" "Married" "Rural" 10 4961.2675 5.7
+"729" "F" "Primary" "Inc4" "Married" "Rural" 9 4874.1875 6.3
+"730" "F" "Primary" "Inc4" "Married" "Rural" 9 4785.305 3.7
+"731" "F" "Primary" "Inc4" "Married" "Rural" 8 5026.315 6
+"732" "F" "Primary" "Inc4" "Married" "Rural" 9 5069.155 5.5
+"733" "F" "Primary" "Inc4" "Single" "Urban" 10 4889.85 6.2
+"734" "F" "Primary" "Inc4" "Single" "Urban" 12 4906.3875 6.7
+"735" "F" "Primary" "Inc4" "Single" "Urban" 10 4743.5675 6.5
+"737" "F" "Primary" "Inc4" "Single" "Urban" 10 4827.6025 4.7
+"738" "F" "Primary" "Inc4" "Single" "Urban" 12 4923.8875 6.8
+"739" "F" "Primary" "Inc4" "Single" "Rural" 8 4845.61 7.4
+"741" "F" "Primary" "Inc4" "Single" "Rural" 8 4780.09 6.9
+"742" "F" "Primary" "Inc4" "Single" "Rural" 7 5379.57 4.7
+"743" "F" "Primary" "Inc4" "Single" "Rural" 8 4998.5425 4.8
+"744" "F" "Primary" "Inc4" "Single" "Rural" 9 5277.7725 3.7
+"747" "F" "Primary" "Inc4" "Divorced" "Urban" 15 4651.6575 5.2
+"748" "F" "Primary" "Inc4" "Divorced" "Urban" 17 4686.2025 8.6
+"749" "F" "Primary" "Inc4" "Divorced" "Urban" 17 4580.5375 5.6
+"751" "F" "Primary" "Inc4" "Divorced" "Rural" 11 5109.8075 5.6
+"753" "F" "Primary" "Inc4" "Divorced" "Rural" 13 4979.415 7.1
+"754" "F" "Primary" "Inc4" "Divorced" "Rural" 13 4949.84 8.6
+"756" "F" "Primary" "Inc4" "Divorced" "Rural" 14 4666.41 6.9
+"757" "F" "Primary" "Inc4" "Widowed" "Urban" 22 4429.0925 9.5
+"758" "F" "Primary" "Inc4" "Widowed" "Urban" 22 4682.8075 7.9
+"760" "F" "Primary" "Inc4" "Widowed" "Urban" 22 4448.2375 10
+"761" "F" "Primary" "Inc4" "Widowed" "Urban" 22 4594.45 9.2
+"763" "F" "Primary" "Inc4" "Widowed" "Rural" 17 4849.9675 8.2
+"764" "F" "Primary" "Inc4" "Widowed" "Rural" 16 4768.4 6.9
+"767" "F" "Primary" "Inc4" "Widowed" "Rural" 17 4290.125 7.4
+"768" "F" "Primary" "Inc4" "Widowed" "Rural" 19 4451.7375 6.9
+"769" "F" "HighSchool" "Inc1" "Married" "Urban" 24 4631.8825 6.7
+"770" "F" "HighSchool" "Inc1" "Married" "Urban" 27 4240.5125 10
+"771" "F" "HighSchool" "Inc1" "Married" "Urban" 27 4102.455 9.8
+"772" "F" "HighSchool" "Inc1" "Married" "Urban" 26 4548.67 9.9
+"773" "F" "HighSchool" "Inc1" "Married" "Urban" 25 4549.1425 9.6
+"774" "F" "HighSchool" "Inc1" "Married" "Urban" 26 4227.4925 11.4
+"775" "F" "HighSchool" "Inc1" "Married" "Rural" 22 4577.7375 10.5
+"776" "F" "HighSchool" "Inc1" "Married" "Rural" 23 4603.2525 9.7
+"777" "F" "HighSchool" "Inc1" "Married" "Rural" 23 4434.675 9.2
+"778" "F" "HighSchool" "Inc1" "Married" "Rural" 22 4261.95 9.8
+"779" "F" "HighSchool" "Inc1" "Married" "Rural" 23 4536.455 9.2
+"781" "F" "HighSchool" "Inc1" "Single" "Urban" 22 4152.8375 10.5
+"783" "F" "HighSchool" "Inc1" "Single" "Urban" 23 4273.395 8.7
+"784" "F" "HighSchool" "Inc1" "Single" "Urban" 23 4457.11 8.3
+"785" "F" "HighSchool" "Inc1" "Single" "Urban" 23 4231.115 9.8
+"786" "F" "HighSchool" "Inc1" "Single" "Urban" 23 4273.955 9.5
+"787" "F" "HighSchool" "Inc1" "Single" "Rural" 20 4516.12 7.5
+"788" "F" "HighSchool" "Inc1" "Single" "Rural" 20 4359.4075 8.7
+"789" "F" "HighSchool" "Inc1" "Single" "Rural" 17 4334.785 7.7
+"790" "F" "HighSchool" "Inc1" "Single" "Rural" 19 4689.65 9.6
+"791" "F" "HighSchool" "Inc1" "Single" "Rural" 20 4582.8825 8.8
+"793" "F" "HighSchool" "Inc1" "Divorced" "Urban" 27 4385.29 9.8
+"794" "F" "HighSchool" "Inc1" "Divorced" "Urban" 29 4129.6325 8.2
+"795" "F" "HighSchool" "Inc1" "Divorced" "Urban" 29 3837.575 9.8
+"797" "F" "HighSchool" "Inc1" "Divorced" "Urban" 27 4639.985 8.5
+"798" "F" "HighSchool" "Inc1" "Divorced" "Urban" 29 4488.4175 9.1
+"799" "F" "HighSchool" "Inc1" "Divorced" "Rural" 26 4449.725 7.3
+"800" "F" "HighSchool" "Inc1" "Divorced" "Rural" 26 4192.335 9.2
+"801" "F" "HighSchool" "Inc1" "Divorced" "Rural" 27 4683.9625 8.4
+"802" "F" "HighSchool" "Inc1" "Divorced" "Rural" 26 4359.3375 8.4
+"803" "F" "HighSchool" "Inc1" "Divorced" "Rural" 25 4381.4925 8.7
+"804" "F" "HighSchool" "Inc1" "Divorced" "Rural" 26 4765.4775 8.3
+"805" "F" "HighSchool" "Inc1" "Widowed" "Urban" 33 4304.1775 10.9
+"806" "F" "HighSchool" "Inc1" "Widowed" "Urban" 33 3990.1575 10.8
+"807" "F" "HighSchool" "Inc1" "Widowed" "Urban" 33 4096.9075 10.2
+"808" "F" "HighSchool" "Inc1" "Widowed" "Urban" 33 4262.86 10.8
+"809" "F" "HighSchool" "Inc1" "Widowed" "Urban" 34 4226.0225 10.6
+"810" "F" "HighSchool" "Inc1" "Widowed" "Urban" 33 4202.94 12.1
+"811" "F" "HighSchool" "Inc1" "Widowed" "Rural" 29 4377.31 12.2
+"814" "F" "HighSchool" "Inc1" "Widowed" "Rural" 31 4151.9275 11.9
+"816" "F" "HighSchool" "Inc1" "Widowed" "Rural" 33 4050.9525 12.2
+"817" "F" "HighSchool" "Inc2" "Married" "Urban" 23 4444.58 8.2
+"818" "F" "HighSchool" "Inc2" "Married" "Urban" 21 4492.7575 5.3
+"820" "F" "HighSchool" "Inc2" "Married" "Urban" 24 4275.2325 8.5
+"821" "F" "HighSchool" "Inc2" "Married" "Urban" 23 4259.1325 8.8
+"823" "F" "HighSchool" "Inc2" "Married" "Rural" 21 4644.08 8.7
+"824" "F" "HighSchool" "Inc2" "Married" "Rural" 20 4305.5775 10.3
+"826" "F" "HighSchool" "Inc2" "Married" "Rural" 20 4714.43 8
+"827" "F" "HighSchool" "Inc2" "Married" "Rural" 19 4561.2875 8.2
+"828" "F" "HighSchool" "Inc2" "Married" "Rural" 19 4489.0125 9.1
+"829" "F" "HighSchool" "Inc2" "Single" "Urban" 20 4515.7175 6.8
+"830" "F" "HighSchool" "Inc2" "Single" "Urban" 20 4333.5775 10.1
+"831" "F" "HighSchool" "Inc2" "Single" "Urban" 19 4430.405 7.3
+"833" "F" "HighSchool" "Inc2" "Single" "Urban" 18 4627.0525 7.8
+"835" "F" "HighSchool" "Inc2" "Single" "Rural" 17 4478.0225 8.7
+"836" "F" "HighSchool" "Inc2" "Single" "Rural" 17 4371.6925 5.8
+"837" "F" "HighSchool" "Inc2" "Single" "Rural" 17 4460.3825 7.2
+"838" "F" "HighSchool" "Inc2" "Single" "Rural" 18 4597.6875 8.1
+"839" "F" "HighSchool" "Inc2" "Single" "Rural" 18 4664.3275 7.4
+"840" "F" "HighSchool" "Inc2" "Single" "Rural" 17 4637.3425 5.4
+"841" "F" "HighSchool" "Inc2" "Divorced" "Urban" 26 4474.4875 8.5
+"842" "F" "HighSchool" "Inc2" "Divorced" "Urban" 26 4399.1325 9.7
+"843" "F" "HighSchool" "Inc2" "Divorced" "Urban" 26 4326.8925 9
+"844" "F" "HighSchool" "Inc2" "Divorced" "Urban" 26 4386.4625 10
+"845" "F" "HighSchool" "Inc2" "Divorced" "Urban" 24 4777.9025 8.6
+"846" "F" "HighSchool" "Inc2" "Divorced" "Urban" 25 4605.055 9.3
+"847" "F" "HighSchool" "Inc2" "Divorced" "Rural" 22 4687.7775 7.4
+"848" "F" "HighSchool" "Inc2" "Divorced" "Rural" 24 4559.59 9.4
+"850" "F" "HighSchool" "Inc2" "Divorced" "Rural" 23 4289.495 10.8
+"851" "F" "HighSchool" "Inc2" "Divorced" "Rural" 23 4875.2375 7.1
+"852" "F" "HighSchool" "Inc2" "Divorced" "Rural" 23 4610.165 8.8
+"853" "F" "HighSchool" "Inc2" "Widowed" "Urban" 29 4407.095 9.4
+"854" "F" "HighSchool" "Inc2" "Widowed" "Urban" 31 4159.75 9
+"857" "F" "HighSchool" "Inc2" "Widowed" "Urban" 32 4241.0025 10.6
+"858" "F" "HighSchool" "Inc2" "Widowed" "Urban" 30 4245.7625 11.6
+"860" "F" "HighSchool" "Inc2" "Widowed" "Rural" 28 4575.9875 10.3
+"861" "F" "HighSchool" "Inc2" "Widowed" "Rural" 28 4394.5475 10.5
+"863" "F" "HighSchool" "Inc2" "Widowed" "Rural" 28 4151.595 10
+"864" "F" "HighSchool" "Inc2" "Widowed" "Rural" 29 4261.6175 9.5
+"865" "F" "HighSchool" "Inc3" "Married" "Urban" 22 4536.5075 8.1
+"866" "F" "HighSchool" "Inc3" "Married" "Urban" 24 4413.7975 8.1
+"867" "F" "HighSchool" "Inc3" "Married" "Urban" 22 4251.87 7.9
+"868" "F" "HighSchool" "Inc3" "Married" "Urban" 23 4671.485 10.3
+"869" "F" "HighSchool" "Inc3" "Married" "Urban" 25 4272.5375 8
+"870" "F" "HighSchool" "Inc3" "Married" "Urban" 23 4310.8975 8.8
+"871" "F" "HighSchool" "Inc3" "Married" "Rural" 21 4658.745 8.7
+"872" "F" "HighSchool" "Inc3" "Married" "Rural" 19 4848.41 7.8
+"873" "F" "HighSchool" "Inc3" "Married" "Rural" 19 4718.7875 6.5
+"875" "F" "HighSchool" "Inc3" "Married" "Rural" 20 4687.76 8.1
+"876" "F" "HighSchool" "Inc3" "Married" "Rural" 20 4625.1275 7.6
+"877" "F" "HighSchool" "Inc3" "Single" "Urban" 20 4718.6825 7
+"878" "F" "HighSchool" "Inc3" "Single" "Urban" 19 4548.1275 8.2
+"879" "F" "HighSchool" "Inc3" "Single" "Urban" 20 4708.1825 8
+"880" "F" "HighSchool" "Inc3" "Single" "Urban" 22 4605.475 8.6
+"881" "F" "HighSchool" "Inc3" "Single" "Urban" 19 4643.345 8.5
+"882" "F" "HighSchool" "Inc3" "Single" "Urban" 18 4778.13 7.2
+"883" "F" "HighSchool" "Inc3" "Single" "Rural" 17 4538.45 6.3
+"884" "F" "HighSchool" "Inc3" "Single" "Rural" 19 4595.395 7.7
+"885" "F" "HighSchool" "Inc3" "Single" "Rural" 17 4710.58 8
+"886" "F" "HighSchool" "Inc3" "Single" "Rural" 17 4670.68 9
+"887" "F" "HighSchool" "Inc3" "Single" "Rural" 18 4632.8975 7.1
+"888" "F" "HighSchool" "Inc3" "Single" "Rural" 17 4590.6175 6.8
+"889" "F" "HighSchool" "Inc3" "Divorced" "Urban" 24 4334.1025 7.9
+"890" "F" "HighSchool" "Inc3" "Divorced" "Urban" 26 4189.01 10.9
+"891" "F" "HighSchool" "Inc3" "Divorced" "Urban" 26 4547.97 10.5
+"893" "F" "HighSchool" "Inc3" "Divorced" "Urban" 26 4435.1475 10.8
+"896" "F" "HighSchool" "Inc3" "Divorced" "Rural" 22 4504.2025 8.8
+"898" "F" "HighSchool" "Inc3" "Divorced" "Rural" 23 4394.88 9.6
+"899" "F" "HighSchool" "Inc3" "Divorced" "Rural" 25 4566.52 9.5
+"900" "F" "HighSchool" "Inc3" "Divorced" "Rural" 23 4197.1475 7.7
+"902" "F" "HighSchool" "Inc3" "Widowed" "Urban" 30 3898.5275 10.2
+"903" "F" "HighSchool" "Inc3" "Widowed" "Urban" 31 4450.46 9.5
+"905" "F" "HighSchool" "Inc3" "Widowed" "Urban" 31 4224.6575 11.2
+"907" "F" "HighSchool" "Inc3" "Widowed" "Rural" 27 4246.2875 9.3
+"908" "F" "HighSchool" "Inc3" "Widowed" "Rural" 28 4499.04 10
+"909" "F" "HighSchool" "Inc3" "Widowed" "Rural" 26 4662.5075 9.8
+"910" "F" "HighSchool" "Inc3" "Widowed" "Rural" 28 4309.6725 9.4
+"912" "F" "HighSchool" "Inc3" "Widowed" "Rural" 30 4366.0575 9.3
+"913" "F" "HighSchool" "Inc4" "Married" "Urban" 15 4875.8325 7.3
+"914" "F" "HighSchool" "Inc4" "Married" "Urban" 15 5051.7075 7.5
+"915" "F" "HighSchool" "Inc4" "Married" "Urban" 15 4979.5725 7.9
+"916" "F" "HighSchool" "Inc4" "Married" "Urban" 15 4636.9225 6.4
+"917" "F" "HighSchool" "Inc4" "Married" "Urban" 15 4545.7125 6.3
+"918" "F" "HighSchool" "Inc4" "Married" "Urban" 14 4811.2225 7
+"919" "F" "HighSchool" "Inc4" "Married" "Rural" 11 5151.405 6.4
+"921" "F" "HighSchool" "Inc4" "Married" "Rural" 12 5213.04 3.8
+"922" "F" "HighSchool" "Inc4" "Married" "Rural" 12 4851.665 6.4
+"923" "F" "HighSchool" "Inc4" "Married" "Rural" 14 4583.705 6.6
+"924" "F" "HighSchool" "Inc4" "Married" "Rural" 13 4932.62 7.6
+"925" "F" "HighSchool" "Inc4" "Single" "Urban" 11 5047.035 5
+"926" "F" "HighSchool" "Inc4" "Single" "Urban" 11 5000.03 6
+"927" "F" "HighSchool" "Inc4" "Single" "Urban" 14 4849.8625 7.1
+"928" "F" "HighSchool" "Inc4" "Single" "Urban" 14 5105.7125 7.9
+"929" "F" "HighSchool" "Inc4" "Single" "Urban" 13 4633.545 6.2
+"930" "F" "HighSchool" "Inc4" "Single" "Urban" 13 4905.425 5.5
+"931" "F" "HighSchool" "Inc4" "Single" "Rural" 7 4883.095 6.6
+"933" "F" "HighSchool" "Inc4" "Single" "Rural" 10 4764.8475 7.7
+"934" "F" "HighSchool" "Inc4" "Single" "Rural" 8 5020.2425 6.1
+"936" "F" "HighSchool" "Inc4" "Single" "Rural" 10 4551.505 5.8
+"937" "F" "HighSchool" "Inc4" "Divorced" "Urban" 19 4539.4825 6.6
+"938" "F" "HighSchool" "Inc4" "Divorced" "Urban" 19 4918.83 8.3
+"939" "F" "HighSchool" "Inc4" "Divorced" "Urban" 18 4908.6275 8.2
+"940" "F" "HighSchool" "Inc4" "Divorced" "Urban" 19 4695.9675 6.7
+"941" "F" "HighSchool" "Inc4" "Divorced" "Urban" 17 4628.2425 8.5
+"942" "F" "HighSchool" "Inc4" "Divorced" "Urban" 18 4636.4675 5.9
+"943" "F" "HighSchool" "Inc4" "Divorced" "Rural" 15 4587.5375 8.2
+"945" "F" "HighSchool" "Inc4" "Divorced" "Rural" 13 4879.56 7.4
+"946" "F" "HighSchool" "Inc4" "Divorced" "Rural" 14 5013.5925 7.3
+"947" "F" "HighSchool" "Inc4" "Divorced" "Rural" 14 4506.985 5.2
+"948" "F" "HighSchool" "Inc4" "Divorced" "Rural" 15 4825.8175 5.8
+"950" "F" "HighSchool" "Inc4" "Widowed" "Urban" 23 4245.57 11.4
+"951" "F" "HighSchool" "Inc4" "Widowed" "Urban" 23 4159.82 7.6
+"952" "F" "HighSchool" "Inc4" "Widowed" "Urban" 23 4149.8275 10.1
+"954" "F" "HighSchool" "Inc4" "Widowed" "Urban" 23 4551.6625 8.4
+"955" "F" "HighSchool" "Inc4" "Widowed" "Rural" 21 4634.035 9.9
+"956" "F" "HighSchool" "Inc4" "Widowed" "Rural" 21 4568.97 7.5
+"957" "F" "HighSchool" "Inc4" "Widowed" "Rural" 21 4354.9275 7.3
+"959" "F" "HighSchool" "Inc4" "Widowed" "Rural" 20 4747.575 7.8
+"960" "F" "HighSchool" "Inc4" "Widowed" "Rural" 19 4632.8975 6.9
+"961" "F" "College or Higher" "Inc1" "Married" "Urban" 30 4297.3525 13.1
+"962" "F" "College or Higher" "Inc1" "Married" "Urban" 30 4415.635 10.2
+"963" "F" "College or Higher" "Inc1" "Married" "Urban" 29 4072.9325 10
+"964" "F" "College or Higher" "Inc1" "Married" "Urban" 30 4494.315 10.8
+"965" "F" "College or Higher" "Inc1" "Married" "Urban" 32 4275.915 11.5
+"966" "F" "College or Higher" "Inc1" "Married" "Urban" 31 4091.815 12.4
+"967" "F" "College or Higher" "Inc1" "Married" "Rural" 28 4646.145 10.3
+"968" "F" "College or Higher" "Inc1" "Married" "Rural" 28 4433.9575 10
+"969" "F" "College or Higher" "Inc1" "Married" "Rural" 26 4169.7075 8.9
+"970" "F" "College or Higher" "Inc1" "Married" "Rural" 28 4213.58 9.5
+"971" "F" "College or Higher" "Inc1" "Married" "Rural" 28 4455.885 9.1
+"972" "F" "College or Higher" "Inc1" "Married" "Rural" 27 4113.06 11.2
+"973" "F" "College or Higher" "Inc1" "Single" "Urban" 26 4578.4375 9.4
+"974" "F" "College or Higher" "Inc1" "Single" "Urban" 27 4678.52 9.2
+"975" "F" "College or Higher" "Inc1" "Single" "Urban" 28 4266.0275 9
+"976" "F" "College or Higher" "Inc1" "Single" "Urban" 29 4150.125 7.1
+"977" "F" "College or Higher" "Inc1" "Single" "Urban" 28 4313.05 9.8
+"978" "F" "College or Higher" "Inc1" "Single" "Urban" 27 4605.055 8.6
+"979" "F" "College or Higher" "Inc1" "Single" "Rural" 22 4099.76 9.1
+"981" "F" "College or Higher" "Inc1" "Single" "Rural" 26 4495.9775 9.2
+"982" "F" "College or Higher" "Inc1" "Single" "Rural" 22 4463.6375 9.9
+"983" "F" "College or Higher" "Inc1" "Single" "Rural" 24 4380.845 9.1
+"984" "F" "College or Higher" "Inc1" "Single" "Rural" 24 4319.6825 8.1
+"986" "F" "College or Higher" "Inc1" "Divorced" "Urban" 34 4043.6375 10.8
+"987" "F" "College or Higher" "Inc1" "Divorced" "Urban" 32 4073.3875 10.8
+"988" "F" "College or Higher" "Inc1" "Divorced" "Urban" 31 4154.78 10.8
+"989" "F" "College or Higher" "Inc1" "Divorced" "Urban" 31 4336.9025 10.9
+"990" "F" "College or Higher" "Inc1" "Divorced" "Urban" 31 4024.755 9.9
+"991" "F" "College or Higher" "Inc1" "Divorced" "Rural" 28 4136.3875 8.4
+"992" "F" "College or Higher" "Inc1" "Divorced" "Rural" 31 4013.9225 9.3
+"993" "F" "College or Higher" "Inc1" "Divorced" "Rural" 29 3973.6725 10.3
+"994" "F" "College or Higher" "Inc1" "Divorced" "Rural" 30 4285.155 10
+"995" "F" "College or Higher" "Inc1" "Divorced" "Rural" 29 4167.0475 9.6
+"996" "F" "College or Higher" "Inc1" "Divorced" "Rural" 30 4259.3075 9.1
+"997" "F" "College or Higher" "Inc1" "Widowed" "Urban" 37 3904.0575 12.1
+"998" "F" "College or Higher" "Inc1" "Widowed" "Urban" 38 4001.6375 11.3
+"999" "F" "College or Higher" "Inc1" "Widowed" "Urban" 38 4121.81 12.6
+"1000" "F" "College or Higher" "Inc1" "Widowed" "Urban" 39 3820.95 11.1
+"1003" "F" "College or Higher" "Inc1" "Widowed" "Rural" 36 3971.87 8.9
+"1005" "F" "College or Higher" "Inc1" "Widowed" "Rural" 34 4279.7125 11.1
+"1006" "F" "College or Higher" "Inc1" "Widowed" "Rural" 35 4254.5125 11
+"1007" "F" "College or Higher" "Inc1" "Widowed" "Rural" 34 4202.205 10.5
+"1009" "F" "College or Higher" "Inc2" "Married" "Urban" 26 4223.5725 9.2
+"1011" "F" "College or Higher" "Inc2" "Married" "Urban" 27 4368.9975 9.7
+"1012" "F" "College or Higher" "Inc2" "Married" "Urban" 28 4301.955 8.8
+"1013" "F" "College or Higher" "Inc2" "Married" "Urban" 27 4212.985 12.3
+"1014" "F" "College or Higher" "Inc2" "Married" "Urban" 27 4332.2475 8
+"1015" "F" "College or Higher" "Inc2" "Married" "Rural" 23 4506.5475 9.7
+"1016" "F" "College or Higher" "Inc2" "Married" "Rural" 25 4129.1425 8.8
+"1018" "F" "College or Higher" "Inc2" "Married" "Rural" 25 4422.495 9.3
+"1019" "F" "College or Higher" "Inc2" "Married" "Rural" 24 4597.145 7.5
+"1020" "F" "College or Higher" "Inc2" "Married" "Rural" 24 4445.42 9.2
+"1021" "F" "College or Higher" "Inc2" "Single" "Urban" 24 4212.32 8.2
+"1023" "F" "College or Higher" "Inc2" "Single" "Urban" 25 4439.9775 8.6
+"1024" "F" "College or Higher" "Inc2" "Single" "Urban" 26 4482.5025 8.9
+"1025" "F" "College or Higher" "Inc2" "Single" "Urban" 23 4414.2525 8.3
+"1026" "F" "College or Higher" "Inc2" "Single" "Urban" 25 4503.1875 8.6
+"1027" "F" "College or Higher" "Inc2" "Single" "Rural" 21 4342.6775 8.3
+"1028" "F" "College or Higher" "Inc2" "Single" "Rural" 22 4357.64 9.2
+"1030" "F" "College or Higher" "Inc2" "Single" "Rural" 21 4443.775 7.5
+"1031" "F" "College or Higher" "Inc2" "Single" "Rural" 21 4765.005 7.8
+"1033" "F" "College or Higher" "Inc2" "Divorced" "Urban" 32 4352.845 9.6
+"1034" "F" "College or Higher" "Inc2" "Divorced" "Urban" 28 4259.22 9
+"1035" "F" "College or Higher" "Inc2" "Divorced" "Urban" 29 4285.9075 9.1
+"1036" "F" "College or Higher" "Inc2" "Divorced" "Urban" 32 4130.0175 9.6
+"1037" "F" "College or Higher" "Inc2" "Divorced" "Urban" 29 4253.27 8.7
+"1038" "F" "College or Higher" "Inc2" "Divorced" "Urban" 31 4178.335 10.7
+"1039" "F" "College or Higher" "Inc2" "Divorced" "Rural" 25 4244.5375 10.5
+"1040" "F" "College or Higher" "Inc2" "Divorced" "Rural" 28 4272.905 11.2
+"1041" "F" "College or Higher" "Inc2" "Divorced" "Rural" 29 4591.7025 8.9
+"1042" "F" "College or Higher" "Inc2" "Divorced" "Rural" 24 4183.515 8.1
+"1043" "F" "College or Higher" "Inc2" "Divorced" "Rural" 28 4314.1875 10.1
+"1044" "F" "College or Higher" "Inc2" "Divorced" "Rural" 28 3995.0225 10.8
+"1046" "F" "College or Higher" "Inc2" "Widowed" "Urban" 34 3730.9825 11.2
+"1047" "F" "College or Higher" "Inc2" "Widowed" "Urban" 38 4039.91 11.3
+"1048" "F" "College or Higher" "Inc2" "Widowed" "Urban" 34 4184.81 9.5
+"1049" "F" "College or Higher" "Inc2" "Widowed" "Urban" 36 4078.97 12.8
+"1050" "F" "College or Higher" "Inc2" "Widowed" "Urban" 34 3996.16 11.3
+"1051" "F" "College or Higher" "Inc2" "Widowed" "Rural" 33 4275.0225 9.8
+"1052" "F" "College or Higher" "Inc2" "Widowed" "Rural" 32 3912.23 10.8
+"1053" "F" "College or Higher" "Inc2" "Widowed" "Rural" 33 3894.415 10.1
+"1054" "F" "College or Higher" "Inc2" "Widowed" "Rural" 32 4134.62 9.2
+"1055" "F" "College or Higher" "Inc2" "Widowed" "Rural" 32 3952.41 10.4
+"1056" "F" "College or Higher" "Inc2" "Widowed" "Rural" 31 4370.24 11.9
+"1058" "F" "College or Higher" "Inc3" "Married" "Urban" 27 4296.95 8.5
+"1059" "F" "College or Higher" "Inc3" "Married" "Urban" 28 4075.12 10
+"1060" "F" "College or Higher" "Inc3" "Married" "Urban" 26 4297.195 10.5
+"1062" "F" "College or Higher" "Inc3" "Married" "Urban" 29 4119.325 10
+"1063" "F" "College or Higher" "Inc3" "Married" "Rural" 24 4491.2 7.3
+"1064" "F" "College or Higher" "Inc3" "Married" "Rural" 23 4333.42 8.5
+"1065" "F" "College or Higher" "Inc3" "Married" "Rural" 24 4236.8025 7.1
+"1066" "F" "College or Higher" "Inc3" "Married" "Rural" 25 4395.335 9.1
+"1067" "F" "College or Higher" "Inc3" "Married" "Rural" 26 4427.5175 8.1
+"1068" "F" "College or Higher" "Inc3" "Married" "Rural" 25 4625.775 9.5
+"1069" "F" "College or Higher" "Inc3" "Single" "Urban" 23 4373.3375 9.1
+"1070" "F" "College or Higher" "Inc3" "Single" "Urban" 24 4568.585 7.3
+"1071" "F" "College or Higher" "Inc3" "Single" "Urban" 23 4131.8375 9.6
+"1072" "F" "College or Higher" "Inc3" "Single" "Urban" 24 4776.5375 9.4
+"1073" "F" "College or Higher" "Inc3" "Single" "Urban" 24 4326.35 8.8
+"1074" "F" "College or Higher" "Inc3" "Single" "Urban" 26 4492.67 9.4
+"1075" "F" "College or Higher" "Inc3" "Single" "Rural" 20 4722.6725 6.2
+"1077" "F" "College or Higher" "Inc3" "Single" "Rural" 21 4321.135 6.8
+"1078" "F" "College or Higher" "Inc3" "Single" "Rural" 23 4583.7575 10.9
+"1079" "F" "College or Higher" "Inc3" "Single" "Rural" 22 4532.3425 7.2
+"1080" "F" "College or Higher" "Inc3" "Single" "Rural" 20 4331.3025 7.1
+"1081" "F" "College or Higher" "Inc3" "Divorced" "Urban" 31 3965.0275 10.2
+"1082" "F" "College or Higher" "Inc3" "Divorced" "Urban" 30 4206.405 11
+"1083" "F" "College or Higher" "Inc3" "Divorced" "Urban" 31 4260.2 9.9
+"1084" "F" "College or Higher" "Inc3" "Divorced" "Urban" 30 4029.725 11.2
+"1088" "F" "College or Higher" "Inc3" "Divorced" "Rural" 27 4281.76 8
+"1089" "F" "College or Higher" "Inc3" "Divorced" "Rural" 26 4274.5325 9.6
+"1090" "F" "College or Higher" "Inc3" "Divorced" "Rural" 28 3958.6575 8.9
+"1091" "F" "College or Higher" "Inc3" "Divorced" "Rural" 27 4242.4025 9.9
+"1092" "F" "College or Higher" "Inc3" "Divorced" "Rural" 28 4166.5225 9
+"1093" "F" "College or Higher" "Inc3" "Widowed" "Urban" 35 3723.8775 11.1
+"1094" "F" "College or Higher" "Inc3" "Widowed" "Urban" 33 3882.3925 10.9
+"1095" "F" "College or Higher" "Inc3" "Widowed" "Urban" 35 3797.9375 10.8
+"1096" "F" "College or Higher" "Inc3" "Widowed" "Urban" 36 3778.425 11.7
+"1097" "F" "College or Higher" "Inc3" "Widowed" "Urban" 35 4039.77 11.6
+"1098" "F" "College or Higher" "Inc3" "Widowed" "Urban" 35 4309.165 10.9
+"1099" "F" "College or Higher" "Inc3" "Widowed" "Rural" 34 4228.1575 11.9
+"1100" "F" "College or Higher" "Inc3" "Widowed" "Rural" 34 3824.52 10
+"1101" "F" "College or Higher" "Inc3" "Widowed" "Rural" 32 4375.42 9.4
+"1103" "F" "College or Higher" "Inc3" "Widowed" "Rural" 32 3998.33 11.4
+"1104" "F" "College or Higher" "Inc3" "Widowed" "Rural" 34 4349.3275 10.6
+"1105" "F" "College or Higher" "Inc4" "Married" "Urban" 20 4572.19 7.6
+"1106" "F" "College or Higher" "Inc4" "Married" "Urban" 21 4376.8725 10.1
+"1108" "F" "College or Higher" "Inc4" "Married" "Urban" 18 4660.005 6.3
+"1109" "F" "College or Higher" "Inc4" "Married" "Urban" 19 4666.13 7.8
+"1110" "F" "College or Higher" "Inc4" "Married" "Urban" 19 4607.855 7.6
+"1112" "F" "College or Higher" "Inc4" "Married" "Rural" 17 4624.725 5.3
+"1113" "F" "College or Higher" "Inc4" "Married" "Rural" 18 4834.69 7.2
+"1114" "F" "College or Higher" "Inc4" "Married" "Rural" 16 4912.8975 7.5
+"1115" "F" "College or Higher" "Inc4" "Married" "Rural" 15 4743.795 7.8
+"1116" "F" "College or Higher" "Inc4" "Married" "Rural" 19 4785.8475 6.7
+"1117" "F" "College or Higher" "Inc4" "Single" "Urban" 18 4687.025 8.4
+"1118" "F" "College or Higher" "Inc4" "Single" "Urban" 16 5310.3925 7.8
+"1119" "F" "College or Higher" "Inc4" "Single" "Urban" 19 4563.4925 7.3
+"1120" "F" "College or Higher" "Inc4" "Single" "Urban" 18 4337.6375 8
+"1121" "F" "College or Higher" "Inc4" "Single" "Urban" 18 4534.46 6.9
+"1122" "F" "College or Higher" "Inc4" "Single" "Urban" 16 4809.2975 6.6
+"1123" "F" "College or Higher" "Inc4" "Single" "Rural" 13 4768.925 7.6
+"1124" "F" "College or Higher" "Inc4" "Single" "Rural" 13 4816.2625 6.4
+"1125" "F" "College or Higher" "Inc4" "Single" "Rural" 12 4796.3125 7.8
+"1126" "F" "College or Higher" "Inc4" "Single" "Rural" 14 4840.535 7.8
+"1128" "F" "College or Higher" "Inc4" "Single" "Rural" 14 4624.725 7.5
+"1130" "F" "College or Higher" "Inc4" "Divorced" "Urban" 21 4515.385 6.7
+"1131" "F" "College or Higher" "Inc4" "Divorced" "Urban" 23 4660.39 8.8
+"1132" "F" "College or Higher" "Inc4" "Divorced" "Urban" 23 4406.5 6.9
+"1133" "F" "College or Higher" "Inc4" "Divorced" "Urban" 22 4569.0225 7.5
+"1135" "F" "College or Higher" "Inc4" "Divorced" "Rural" 20 4367.65 7.2
+"1136" "F" "College or Higher" "Inc4" "Divorced" "Rural" 20 4473.385 7.1
+"1138" "F" "College or Higher" "Inc4" "Divorced" "Rural" 20 4596.3575 7
+"1139" "F" "College or Higher" "Inc4" "Divorced" "Rural" 19 4556.8075 8.7
+"1141" "F" "College or Higher" "Inc4" "Widowed" "Urban" 29 4155.1475 10
+"1144" "F" "College or Higher" "Inc4" "Widowed" "Urban" 28 4349.8875 10.7
+"1145" "F" "College or Higher" "Inc4" "Widowed" "Urban" 28 4181.1 10
+"1146" "F" "College or Higher" "Inc4" "Widowed" "Urban" 28 4487.1575 8.2
+"1147" "F" "College or Higher" "Inc4" "Widowed" "Rural" 25 4408.04 9
+"1148" "F" "College or Higher" "Inc4" "Widowed" "Rural" 24 4467.7325 10.2
+"1149" "F" "College or Higher" "Inc4" "Widowed" "Rural" 25 4534.3725 8.9
+"1151" "F" "College or Higher" "Inc4" "Widowed" "Rural" 24 4457.705 8.9
+"1152" "F" "College or Higher" "Inc4" "Widowed" "Rural" 26 4229.33 9.5
